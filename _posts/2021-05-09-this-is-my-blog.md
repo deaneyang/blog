@@ -5,4 +5,6 @@ title:  "This is my blog"
 date:   2021-05-09 16:08:01 -0400
 ---
 
-This is my blog.
+This is my blog. Test math:
+$$ \int_0^1 f(x)\,dx $$
+Inline math: $y = x^2 - x + 1$
