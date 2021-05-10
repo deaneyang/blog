@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A simple way to discover the Riemann curvature tensor"
-# date:   2021-05-09 19:14:09 -0400
+date:   2021-05-09 19:14:09 -0400
 categories: blog math differential-geometry riemannian-geometry
 ---
 $\newcommand{\R}{\mathbb{R}}$
