@@ -70,23 +70,32 @@ Now consider a local diffeomorphism of the form
   y^i = x^i + B^i_{jk}x^jx^k.
 \end{equation}
 If we now differentiate \eqref{equation:isometric} twice and evaluate at $0$, we get
-\begin{align*}
-  \partial^2_{kl}g_{ij}
-  &= \partial^2_{kl}h_{ij}
-    + \partial^3_{jkl}y^i + \partial^3_{ikl}y^j.
-\end{align*}
+
+$$
+\partial_{kl}^2g_{ij}
+  = \partial_{kl}^2h_{ij}
+    + \partial_{jkl}^3y^i + \partial_{ikl}^3y^j.
+$$
+
 Permuting the indices, we get
-\begin{align}
-  \partial^2_{jl}g_{ik} &= \partial^2_{jl}h_{ik} + \partial^3_{jkl}y^i \label{g1}\\
-  \partial^2_{ik}g_{jl} &= \partial^2_{ik}h_{jl} + \partial^3_{ikl}y^j \label{g2}\\
-  \partial^2_{jk}g_{il} &= \partial^2_{jk}h_{il} + \partial^3_{jkl}y^i \label{g3}\\
-  \partial^2_{il}g_{jk} &= \partial^2_{il}h_{jk} + \partial^3_{ikl}y^j \label{g4}
-\end{align}
+\begin{equation}
+  \partial_{jl}^2g_{ik} = \partial_{jl}^2h_{ik} + \partial_{jkl}^3y^i \label{g1}
+\end{equation}
+\begin{equation}
+  \partial_{ik}^2g_{jl} = \partial_{ik}^2h_{jl} + \partial_{ikl}^3y^j \label{g2}
+\end{equation}
+\begin{equation}
+  \partial_{jk}^2g_{il} = \partial_{jk}^2h_{il} + \partial_{jkl}^3y^i \label{g3}
+\end{equation}
+\begin{equation}
+  \partial_{il}^2g_{jk} = \partial_{il}^2h_{jk} + \partial_{ikl}^3y^j \label{g4}
+\end{equation}
 Therefore,
 $$
   \eqref{g1} + \eqref{g2} - \eqref{g3} - \eqref{g4}
 $$
 implies that
+
 $$
   \partial^2_{jl}g_{ik} + \partial^2_{ik}g_{jl}
   - \partial^2_{jk}g_{il} - \partial^2_{il}g_{jk}
@@ -94,13 +103,18 @@ $$
   \partial^2_{jl}h_{ik} + \partial^2_{ik}h_{jl}
   - \partial^2_{jk}h_{il} - \partial^2_{il}h_{jk}
 $$
+
 It follows that, if we define
+
 $$
   R^g_{ijkl} = -\frac{1}{2}(\partial^2_{jl}g_{ik}(0) + \partial^2_{ik}g_{jl}(0)
   - \partial^2_{jk}g_{il}(0) - \partial^2_{il}g_{jk}(0)),
 $$
+
 then if two metrics $g$ and $h$ are isometric near $0$, then, there exist local coordinates for each metric such that \eqref{zeroth-order-metric}, \eqref{first-order-metric}, and
+
 $$
   R^g_{ijkl} = R^h_{ijkl}.
 $$
+
 The fact that this is invariant under local diffeomorphisms given by \eqref{second-order-map} implies that it transforms as a $4$-th order tensor under arbitrary local diffeomorphisms. In other words, it is a coordinate-independent invariant of the metric. It is, in fact, the Riemann curvature tensor at $0$.
