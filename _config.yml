@@ -21,7 +21,7 @@
 title: Mathematical Fragments
 author:
   name: Deane Yang
-# email: deane@deaneyang.com
+  email: deane@deaneyang.com
 description: >- # this means to ignore newlines until "baseurl:"
   Shards of mathematics
 baseurl: "/blog" # the subpath of your site, e.g. /blog
