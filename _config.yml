@@ -30,9 +30,9 @@ url: "https://deaneyang.github.io/"
 # Build settings
 markdown: kramdown
 theme: minima
-plugins:
+# theme: jekyll-theme-slate
+# plugins:
 #  - jekyll-feed
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
