@@ -4,7 +4,7 @@ title:  "Pullback of a vector bundle and connection"
 # date:   2021-05-10
 categories: blog math differential-geometry riemannian-geometry
 ---
-
+$\newcommand{\R}{\mathbb{R}}$
 Everything is assumed to be $C^\infty$.
 
 ### Pullback of a vector bundle
@@ -57,7 +57,9 @@ Given $V \in T_xN$ and a section $\widehat{W} = b^kY_k$ of the pullback $T^\Phi_
 \]
 </p>
 
+<p>
 The following lemma provides a formula for $\Phi_*[V,W]$ using the pullback bundle $T^\Phi_*M$.
+</p>
 
 <div class="lemma">
   Given tangent vector fields $V$ and $W$ on $N$,
@@ -146,7 +148,7 @@ given any vector fields $V, W$ on $N$ and section $f$ of $E^\Phi$,
 \end{equation}
 </p>
 
-### Pullback of torsion-free connection}
+### Pullback of torsion-free connection
 
 <p>
 Assume that $\nabla$ is a torsion-free connection on $T_*M$, i.e.,
