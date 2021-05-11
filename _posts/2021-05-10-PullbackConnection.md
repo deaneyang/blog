@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Pullback of a vector bundle and connection"
-# date:   2021-05-10
+date:   2021-05-10
 categories: blog math differential-geometry riemannian-geometry
 ---
 $\newcommand{\R}{\mathbb{R}}$
