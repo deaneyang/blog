@@ -24,6 +24,7 @@ We begin by recalling how to normalize the metric up to first order. This can al
     g_{ij}(0) &= \delta_{ij} \label{zeroth-order-metric}\\
     \partial_kg_{ij}(0) &= 0. \label{first-order-metric}
   \end{align}
+The diffeomorphism is unique up to second order.
 </div>
 
 <div class="proof">
@@ -66,8 +67,8 @@ We begin by recalling how to normalize the metric up to first order. This can al
 
 We therefore assume that we have two metrics \eqref{metrics} such that both satisfy \eqref{zeroth-order-metric} and \eqref{first-order-metric}.
 Now consider a local diffeomorphism of the form
-\begin{equation}\label{second-order-map}
-  y^i = x^i + B^i_{jk}x^jx^k.
+\begin{equation}\label{third-order-map}
+y^i = x^i + B^i_{jkl}x^jx^kx^l +\text{ higher order terms}.
 \end{equation}
 If we now differentiate \eqref{equation:isometric} twice and evaluate at $0$, we get
 
@@ -111,10 +112,10 @@ $$
   - \partial^2_{jk}g_{il}(0) - \partial^2_{il}g_{jk}(0)),
 $$
 
-then if two metrics $g$ and $h$ are isometric near $0$, then, there exist local coordinates for each metric such that \eqref{zeroth-order-metric}, \eqref{first-order-metric}, and
+then if two metrics $g$ and $h$ are isometric up to second order near $0$, then, there exist local coordinates for each metric such that \eqref{zeroth-order-metric}, \eqref{first-order-metric}, and
 
 $$
   R^g_{ijkl} = R^h_{ijkl}.
 $$
 
-The fact that this is invariant under local diffeomorphisms given by \eqref{second-order-map} implies that it transforms as a $4$-th order tensor under arbitrary local diffeomorphisms. In other words, it is a coordinate-independent invariant of the metric. It is, in fact, the Riemann curvature tensor at $0$.
+The fact that this is invariant under local diffeomorphisms given by \eqref{third-order-map} implies that it transforms as a $4$-th order tensor under arbitrary local diffeomorphisms. In other words, it is a coordinate-independent invariant of the metric. It is, in fact, the Riemann curvature tensor at $0$.
