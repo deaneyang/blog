@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Anecdote: A short stint on Wall Street"
-date:   2021-05-15
+date:   2021-05-11
 categories: blog Wall-Street anecdote
 ---
 
