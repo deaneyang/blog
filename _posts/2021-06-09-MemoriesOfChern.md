@@ -86,7 +86,7 @@ me he almost had it, too. But I knew he didn’t. Our ideas were close but
 different. I didn’t know what to do. I went to see Chern and asked him how to
 handle this situation. Chern said that the best way would be to write a joint
 paper, but that I should wait until the professor suggests it. He also told me
-that if the professor does not suggest it with a few months, I should go ahead,
+that if the professor does not suggest it within a few months, I should go ahead,
 write it up, and publish it. And that’s what I did. This was one of my best
 results. Of course, the professor in question was upset, because he and all of
 his students had been working on it for several years.
