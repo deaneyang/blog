@@ -6,20 +6,20 @@ categories: blog Chern Yang
 ---
 
 ## My Memories of S. S. Chern
-### By C. T. Yang (as told to D. Yang)
+### By Chung Tao Yang (as told to D. Yang)
 
 ### In China
 
 Chern was born in Jiaxing, Zhejiang but his father moved his
 family to Tianjin. Chern did very well there and entered Nankai University when
 he was only 15. At that time the Nankai math department consisted of one
-person, Jiang Lifu (1890-1978), who taught all of the courses. Jiang was from
+person, [Jiang Lifu][3] (1890-1978), who taught all of the courses. Jiang was from
 the same county as me, Pingyang County in Zhejiang. After graduating from
 Nankai, Chern went first to Qinghua University, but soon left for Germany, where he studied with
 Blaschke, and France, where he studied with Elie Cartan. He then returned to
 China. By then the war had forced the three major universities in Beijing to
 relocate temporarily in Kunming as a single combined Southwest Associated University,
-where Chern became a professor. Also there at that time was L. K. Hua<sup>[1](#hua)</sup>. At that time,
+where Chern became a professor. Also there at that time was [L. K. Hua][2]<sup>[1](#hua)</sup>. At that time,
 Hua and Chern were viewed as the two top young mathematicians in China.
 
 The Academia Sinica started an Institute of Mathematics in
@@ -133,3 +133,6 @@ leader in the Chinese academic community. (Some of the details of Hua’s life
 are taken from: Sheng Gong, <i>The Life and Work of Famous Chinese
 Mathematician Loo-keng Hua</i>, Advances in Applied Clifford Algebras 11(2001)
 9-20.)
+
+[2]: <https://en.wikipedia.org/wiki/Hua_Luogeng> "L. K. Hua"
+[3]: <https://en.wikipedia.org/wiki/Jiang_Lifu> "Jiang Lifu"
