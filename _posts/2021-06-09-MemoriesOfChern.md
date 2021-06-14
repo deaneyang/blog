@@ -19,7 +19,7 @@ Nankai, Chern went first to Qinghua University, but soon left for Germany, where
 Blaschke, and France, where he studied with Elie Cartan. He then returned to
 China. By then the war had forced the three major universities in Beijing to
 relocate temporarily in Kunming as a single combined Southwest Associated University,
-where Chern became a professor. Also there at that time was [L. K. Hua][2]<sup>[1](#hua)</sup>. At that time,
+where Chern became a professor. Also there at that time was [Hua Loo-Keng][2]<sup>[1](#hua)</sup>. At that time,
 Hua and Chern were viewed as the two top young mathematicians in China.
 
 The Academia Sinica started an Institute of Mathematics in
@@ -55,8 +55,8 @@ difficulty switching to topology.
 
 By the end of 1948, the Communists were winning the war, and
 the Institute followed the Nationalists to Taiwan. Only three senior
-mathematicians, (Jiang, S. T. Hu, and H. C. Wang) and three junior
-mathematicians (Liao, Chen, and me) went to Taiwan. Jiang and Chen would return
+mathematicians, (Jiang, [Hu Sze-Tsen][4], and [Wang Hsien Chung][5]) and three junior
+mathematicians ([Liao Shantao][6], Chen, and me) went to Taiwan. Jiang and Chen would return
 to the mainland in 1949, while Hu, Wang, and I went to the U.S. Hu first went
 to Tulane as an assistant professor and later became a full professor at UCLA.
 Wang started at LSU and later became a professor at Cornell. Both were
@@ -134,5 +134,8 @@ are taken from: Sheng Gong, <i>The Life and Work of Famous Chinese
 Mathematician Loo-keng Hua</i>, Advances in Applied Clifford Algebras 11(2001)
 9-20.)
 
-[2]: <https://en.wikipedia.org/wiki/Hua_Luogeng> "L. K. Hua"
+[2]: <https://en.wikipedia.org/wiki/Hua_Luogeng> "Hua Loo-Keng"
 [3]: <https://en.wikipedia.org/wiki/Jiang_Lifu> "Jiang Lifu"
+[4]: <https://en.wikipedia.org/wiki/Sze-Tsen_Hu> "Hu Sze-Tsen"
+[5]: <https://en.wikipedia.org/wiki/Hsien_Chung_Wang> "Wang Hsien Chung"
+[6]: <https://en.wikipedia.org/wiki/Liao_Shantao> "Liao Shantao"
