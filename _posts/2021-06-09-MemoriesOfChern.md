@@ -42,8 +42,8 @@ were. He told me it would be good for me to go there. He also told Chern about
 me and said that, when we were in college, I was better than him. Chern knew that university math departments were
 always reluctant to let their best students go elsewhere, so he said that if
 the head of the math department would write a letter to him agreeing to let me
-go to the Institute, Chern would take me. Luckily, the department head was Su
-Buchin, who-like Jiang and me- was also born in Pingyang County, agreed.
+go to the Institute, Chern would take me. Luckily, the department head was [Su
+Buchin][7], who &mdash; like Jiang and me &mdash; was also born in Pingyang County, agreed.
 
 I went to the Institute in the summer of 1948. By then the
 Institute had moved with the Nationalists to Nanjing. Chern had been invited to
@@ -139,3 +139,5 @@ Mathematician Loo-keng Hua</i>, Advances in Applied Clifford Algebras 11(2001)
 [4]: <https://en.wikipedia.org/wiki/Sze-Tsen_Hu> "Hu Sze-Tsen"
 [5]: <https://en.wikipedia.org/wiki/Hsien_Chung_Wang> "Wang Hsien Chung"
 [6]: <https://en.wikipedia.org/wiki/Liao_Shantao> "Liao Shantao"
+[7]: <https://en.wikipedia.org/wiki/Su_Buqing> "Su Buchin"
+
