@@ -6,7 +6,7 @@ categories: blog Chern Yang
 ---
 
 ## My Memories of S. S. Chern
-### By C. T. Yang (as told to D. Yang)
+### By Chung Tao Yang (as told to D. Yang)
 
 ### In China
 
