@@ -86,7 +86,7 @@ By \eqref{independent}, this definition is independent of the connection used.
 </p>
 
 <p>
-The standard coordinate-free definition \eqref{standard} can be obtained from this definition using \eqref{product}:
+The standard coordinate-free definition \eqref{standard} can be obtained from this definition and \eqref{product}:
 \begin{align*}
 \langle d\theta, V\otimes W\rangle
 &= \langle \nabla_V\theta,W\rangle - \langle V,\nabla_W\theta\rangle\\
