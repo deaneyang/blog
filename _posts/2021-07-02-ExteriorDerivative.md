@@ -69,7 +69,7 @@ By this and the torsion-free property \eqref{torsion-free},
 + \langle\theta, \tilde\nabla_VW - \tilde\nabla_WV - \nabla_VW + \nabla_WV\rangle\\
 &=
 \langle V, \nabla_W\theta\rangle - \langle W,\nabla_V\theta\rangle
-+ [V,W] - [V,W]\\
++ \langle \theta, [V,W] - [V,W]\rangle\\
 &=
 \langle V, \nabla_W\theta\rangle - \langle W,\nabla_V\theta\rangle.
 \end{split}\label{independent}
