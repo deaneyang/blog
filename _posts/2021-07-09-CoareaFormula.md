@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What's the intuition behind the coarea formula?"
-date:   2021-05-15
+date:   2021-07-09
 categories: blog math differential-geometry integration
 ---
 $\newcommand{\R}{\mathbb{R}}$
