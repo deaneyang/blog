@@ -6,7 +6,7 @@ categories: blog math differential-geometry integration
 ---
 $\newcommand{\R}{\mathbb{R}}$
 
-(This is based on an <a href="https://math.stackexchange.com/a/4031416/10584">answer to this question on math.stackexchange.com question</a>)
+(This is based on an <a href="https://math.stackexchange.com/a/4031416/10584">answer to this question on math.stackexchange.com</a>)
 
 The coarea formula is a way to write an integral on a Riemannian mnanifold in terms of integrals over level sets of a function. It is widely used for proving functional inequalities, such as Sobolev inequalities, via symmetrization arguments.
 
