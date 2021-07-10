@@ -8,7 +8,7 @@ $\newcommand{\R}{\mathbb{R}}$
 
 (This is based on an <a href="https://math.stackexchange.com/a/4031416/10584">answer to this question on math.stackexchange.com</a>)
 
-The coarea formula is a way to write an integral on a Riemannian mnanifold in terms of integrals over level sets of a function. It is widely used for proving functional inequalities, such as Sobolev inequalities, via symmetrization arguments.
+The coarea formula is a way to write an integral on a Riemannian manifold in terms of integrals over level sets of a function. It is widely used for proving functional inequalities, such as Sobolev inequalities, via symmetrization arguments.
 
 For simplicity, we restrict to an integral over an open domain $O \subset\R^n$. The coarea formula states the following:
 
@@ -24,7 +24,7 @@ $$ |\partial f| = \sqrt{\det (\partial f \partial f^T)} $$
 This is most easily understood when $n = 1$ and $f$ is a bounded smooth function  whose gradient is everywhere nonzero.
 
 <p>
-The level sets of $f$ are non-intersecting hypersurfaces. Suppos first that you want to compute the volume of the $A$ in terms of the surface areas of the hypersurfaces. Let $a = \inf f$ and $b = \sup f$. You can divide the interval $[a,b]$ into equal sized subintervals $I_1 = [y_0,y_1], \dots, I_N = [y_{N-1},y_N]$ of size $\delta = (b-a)/N$. The volume of $A$ is the sum of the volumes of $f^{-1}(I_k)$. On the other hand, each $f^{-1}(I_k)$ is a shell with varying thickness. At each point, the thickness is roughly $\Delta t/|\nabla f|$. So the volume of the shell is roughly
+The level sets of $f$ are non-intersecting hypersurfaces. Suppose first that you want to compute the volume of the $A$ in terms of the surface areas of the hypersurfaces. Let $a = \inf f$ and $b = \sup f$. You can divide the interval $[a,b]$ into equal sized subintervals $I_1 = [y_0,y_1], \dots, I_N = [y_{N-1},y_N]$ of size $\delta = (b-a)/N$. The volume of $A$ is the sum of the volumes of $f^{-1}(I_k)$. On the other hand, each $f^{-1}(I_k)$ is a shell with varying thickness. At each point, the thickness is roughly $\Delta t/|\nabla f|$. So the volume of the shell is roughly
 $$
 V(f^{-1}(I_k)) \simeq \Delta t\int_{f^{-1}(y_k)}\frac{dH_{n-1}}{|\nabla f|},
 $$
