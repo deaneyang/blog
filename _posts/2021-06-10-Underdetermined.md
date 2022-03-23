@@ -241,7 +241,7 @@ and only if
 </p>
 
 <p>
-If we assume the nondegeneracy condition
+If we assume the nondegeneracy condition,
 then $\theta$ vanishes on a curve $C$ if and only if there exists a
 function $g(x)$ such that for any $x \in \R$,
 $$
@@ -261,7 +261,7 @@ $$
 \begin{bmatrix} B & -b_1 \\ -A & a_1 \end{bmatrix}
 \begin{bmatrix} g \\ g'-f\end{bmatrix}.
 $$
-The ODE \eqref{ode} is the special case where $a_0 = b_0 0$, and
+The ODE \eqref{ode} is the special case where $a_0 = b_0 = 0$, and
 Gromov's solution \eqref{gromov-solution} is the one given by setting
 $g = 0$.
 </p>
