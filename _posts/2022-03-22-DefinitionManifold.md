@@ -1,16 +1,28 @@
 ---
 layout: post
-title:  "It's in my book! It's in my book!"
-date:   2021-07-09
-categories: blog math Kato inequality
+title:  "How I define a manifold"
+date:   2022-03-22
+categories: blog math differential-geometry manifolds
 ---
+$\newcommand{\R}{\mathbb{R}}$
+I've always disliked the standard ways to state the definition of a manifold in differential geometry. Here's how I like to do it.
 
-When I was a visiting associate professor at Columbia, I was studying the work of Uhlenbeck and Taubes on Yang-Mills theory. At some point, I discovered that a crucial point was a tensor inequality that was essentially the Cauchy-Schwarz inequality but with a constant less than $1$. It was so simple and yet so powerful.
+Start with a set $M$, just a set. Define a coordinate map to be a bijection $\phi: O \rightarrow \mathbb{R}^n$, where $O$ is a subset of $M$ and $\phi(O) \subset \mathbb{R}^n$ is open. Define an atlas to be a collection of coordinate maps, where the domains of the maps cover $M$. No assumptions about topology or smoothness yet.
 
-I thought this was really cool, so I went to tell Phong about it. As it happens, Eli Stein was in Phong's office. As I showed it to them, Stein erupted, "It's in my book! It's in my book!"
+A topological atlas is one where for any two coordinate maps $\phi_1: O_1 \rightarrow \mathbb{R}^n$ and $\phi_2: O_2\rightarrow \mathbb{R}^n$ such that $O_1\cap O_2 \ne \emptyset$, the change of coordinate map
 
-I went back home, pulled out Stein's book *Singular Integrals and Differentiability Properties of Functions*, and indeed there it was.
+$$\phi_2\circ\phi_1^{-1}: \phi_1(O_1\cap O_2) \rightarrow \phi_2(O_1\cap O_2) $$
 
-Many years later, I saw Phong and Stein together at Phong's 60th birthday conference, and Phong encouraged me to tell the story to Stein, which I did.
+is a homeomorphism. A topological manifold is the set $M$ with a topological atlas. You can now define a function $f: M \rightarrow \R$ to be continuous if for any coordinate map $\phi: O \rightarrow \R^n$, the function $f\circ\phi^{-1}: \phi(O) \rightarrow \R$ is continuous. The assumption on the change of coordinate maps is the necessary and sufficient condition that this definition of continuity is logically consistent.
 
-Here is [an explanation of the inequality](https://mathoverflow.net/a/110242/613).
+Observe that there is now a unique topology on $M$ such that all coordinate maps are continuous. It is the topology where the domains of all coordinate maps comprise a base of open sets. Again, the assumption on the change of coordinate maps is exactly what's needed for this topology to exist.
+
+Usually, there is one more assumption made, which I like to state as follows:
+
+First, observe that if $\phi: O \rightarrow \R^n$ is a coordinate chart, then for any open $O' \subset O$, you can also include in the atlas the map $\phi$ restricted to $O'$.
+
+The additional assumption is the following: <i>You can separate points using coordinate charts.</i> More precisely, given any two different points $p_1, p_2 \in M$, there exist coordinate charts $\phi_1: O_1 \rightarrow \R^n$ and $\phi_2: O_2 \rightarrow \R^n$ such that $p_1 \in O_1$, $p_2 \in O_2$, and $O_1\cap O_2 = \emptyset$.
+
+This assumption is usually stated by saying that the topology on $M$ is Hausdorff, but I think my way is easier to understand.
+
+The definition of a smooth manifold is exactly the same, except that the change of coordinate maps are also assumed to be smooth, i.e., diffeomorphisms.
