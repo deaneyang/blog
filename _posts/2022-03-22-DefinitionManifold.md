@@ -5,7 +5,7 @@ date:   2022-03-22
 categories: blog math differential-geometry manifolds
 ---
 $\newcommand{\R}{\mathbb{R}}$
-I've always disliked the standard ways to state the definition of a manifold in differential geometry. First, the definition always starts with a topological space $M$. I don't understand why you need to start with that assumption. I prefer to show that the topology of $M$ is in fact a *consequence* of the definition. Second, the definition always uses two technical terms, paracompact and Hausdorff. I prefer to describe the properties concretely in terms of coordinate maps.
+I've always disliked the standard ways to define a manifold in differential geometry. First, the definition always starts with a topological space $M$. I don't understand why you need make this assumption. I prefer to show that the topology of $M$ is a natural consequence of the definition. Second, the definition always uses two technical terms, paracompact and Hausdorff. I prefer to describe the properties concretely in terms of coordinate maps. 
 
 I prefer to define a manifold as follows:
 
@@ -17,7 +17,7 @@ $$\phi_2\circ\phi_1^{-1}: \phi_1(O_1\cap O_2) \rightarrow \phi_2(O_1\cap O_2) $$
 
 is a homeomorphism. A topological manifold is a set $M$ with a topological atlas.
 
-Observe that there is now a unique topology on $M$ such that all coordinate maps are continuous. It is the topology where given any coordinate map $\phi: O \rightarrow \R^n$ and open subset $U \subset \phi(O)$, $\phi^{-1}(U)$ is open. The assumption on the change of coordinate maps implies that this definition is logically consistent.
+Observe that there is now a unique topology on $M$ such that all coordinate maps are continuous. It is the topology where given any coordinate map $\phi: O \rightarrow \R^n$ and open subset $U \subset \phi(O)$, $\phi^{-1}(U)$ is open. The assumption on the change of coordinate maps is exactly what is needed for this definition to be logically consistent.
 
 Usually (but not always), there is one more assumption made, which I like to state as follows:
 
