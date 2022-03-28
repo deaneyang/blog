@@ -7,7 +7,7 @@ categories: blog math differential-geometry manifolds
 $\newcommand{\R}{\mathbb{R}}$
 I've always disliked the standard ways to define a manifold in differential geometry. First, the definition always starts with a topological space $M$. I don't understand why you need make this assumption. I prefer to show that the topology of $M$ is a natural consequence of the definition. Second, the definition always uses two technical terms, paracompact and Hausdorff. I prefer to describe the properties concretely in terms of coordinate maps. 
 
-I prefer to define a manifold as follows:
+Below is how I prefer to define a manifold. It turns out that Peter Olver, in his book *Applications of Lie Groups to Differential Equations* (published in 1986) defines a manifold in exactly the same way (see Definition 1.1).
 
 Start with a set $M$, just a set. Define a coordinate map to be a bijection $\phi: O \rightarrow \mathbb{R}^n$, where $O$ is a subset of $M$ and $\phi(O) \subset \mathbb{R}^n$ is open. Define an atlas to be a countable collection of coordinate maps, where the domains of the maps cover $M$. No assumptions about topology or smoothness yet. 
 
