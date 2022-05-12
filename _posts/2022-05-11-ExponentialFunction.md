@@ -31,8 +31,8 @@ $$ E: \R \rightarrow \R $$
 is said to be growing or decaying exponentially if its derivative is proportional to itself. In other words, it is differentiable and satisfies the equation
 \begin{equation} E' = kE. \label{ode}\end{equation}
 Applying the fundamental theorem of calculus, this is equivalent to the equation
-$$ E(x) = e_0 + k\int_{\tau=0}^{\tau=t} E(\tau)\,d\tau. $$
-It is straightforward, using a contraction mapping argument, that, given $E_0 \in \R$ , there is a unique differentiable function $E_k: \R \rightarrow \R$ satisfying \eqref{ode} and $E_k(0) = e_0$.
+\begin{equation} E(x) = e_0 + k\int_{\tau=0}^{\tau=t} E(\tau)\,d\tau. \label{integral}\end{equation}
+It is straightforward, using a contraction mapping argument, that, given $E_0 \in \R$ , there is a unique differentiable function $E_k: \R \rightarrow \R$ satisfying \eqref{integral} and therefore \eqref{ode} with $E_k(0) = e_0$.
 </p>
 
 <p>
