@@ -6,7 +6,7 @@ categories: blog math exponential-function euler-formula
 ---
 $\newcommand\R{\mathbb{R}}\newcommand\C{\mathbb{C}}$
 
-<p><i>This was inspired by Michael Hutchings' observation that Euler's formula can be proved by solving an ordinary differential equation.</i></p>
+<p><i>This was provoked by a <a href="https://www.quantamagazine.org/how-infinite-series-reveal-the-unity-of-mathematics-20220124/">Quanta Magazine article by Steven Strogatz on how to prove Euler's formula using power series.</a> The discussion below was inspired by Michael Hutchings' observation that Euler's formula can be proved by solving an ordinary differential equation.</i></p>
 
 <p>
 Euler's formula states that given any real number $\theta$,
