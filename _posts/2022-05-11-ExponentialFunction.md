@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Exponential function and Euler's formula without using power series"
+title:  "Exponential function and Euler's formula without power series"
 date:   2022-05-11
 categories: blog math exponential-function euler-formula
 ---
