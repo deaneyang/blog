@@ -46,7 +46,7 @@ This in turn implies that, if
 $$ e = e_1(1),$$
 then for any rational number $\frac{n}{d}$,
 $$ e_1\left(\frac{n}{d}\right) = e^{\frac{n}{d}}. $$
-These are exactly the crucial properties we would expect from an exponential function and justifies writing, for any $t \in \R$,
+These are the exact properties we would expect from an exponential function and justifies writing, for any $t \in \R$,
 $$e_1(t) = e^t.$$
 </p>
 
