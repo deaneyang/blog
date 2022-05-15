@@ -4,14 +4,44 @@ title:  "Exponential function and Euler's formula without power series"
 date:   2022-05-11
 categories: blog math exponential-function euler-formula
 ---
-$\newcommand\R{\mathbb{R}}\newcommand\C{\mathbb{C}}$
+$\newcommand\R{\mathbb{R}}\newcommand\C{\mathbb{C}}\newcommand\Z{\mathbb{Z}}$
 
 <p><i>This was provoked by a <a href="https://www.quantamagazine.org/how-infinite-series-reveal-the-unity-of-mathematics-20220124/">Quanta Magazine article by Steven Strogatz on how to prove Euler's formula using power series.</a> The discussion below was inspired by Michael Hutchings' observation that Euler's formula can be proved by solving an ordinary differential equation.</i></p>
+
+### Introduction
+
+Euler's formula states that given any real number $\theta$,
+$$e^{i\theta} = \cos\theta + i\sin\theta.$$
+At first, even the meaning of the left side is unclear. The standard approach is to use power series to define $e^{i\theta}$ and prove Euler's formula. The argument is outlined below. It is simple and elegant. I have, however, always found it unsatisfying, since it provides little intuition into what's going on.
+
+Here, I provide an alternative approach that I find both simpler and more natural. Moreover, it accomplishes much more. From nothing more than elementary calculus (and some elementary real analysis if you want rigorous proofs), it provides definitions of the constants $\pi$ and $e$, as well as definitions and basic properties of the exponential, sine, and cosine functions, including Euler's formula.
+
+### Power series proof of Euler's formula
+
+<p>
+The standard approach is to observe that the power series for $e^x$ for $x \in \R$,
+\begin{equation}\label{taylor}
+  e^{x} = \sum_{k=0} \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} +\cdots,
+\end{equation}
+can be extended to complex values of $x$.
+Therefore,
+\begin{equation}\label{complex-taylor}
+  e^{i\theta} = \sum_{k=0} \frac{(i\theta)^k}{k!} = 1 + i\theta + \frac{(i\theta)^2}{2!} +\cdots.
+\end{equation}  
+The same proof that \eqref{taylor} converges can be shown that \eqref{complex-taylor} converges. Euler's formula now follows by splitting $e^{i\theta}$ into its real and imaginary parts,
+\begin{align*}
+e^{i\theta} &= \sum_{k=0} \frac{(i\theta)^k}{k!}\\
+            &= \sum_{k=0} (-1)^k \frac{\theta^{2k}}{(2k)!}
+            + i\sum_{k=0} (-1)^k \frac{\theta^{2k+1}}{(2k+1)!}\\
+            &= \cos\theta + i\sin\theta.
+\end{align*}  
+This is simple and elegant, but power series provide little intuition to what is going on.
+</p>
 
 <p>
 Euler's formula states that given any real number $\theta$,
 $$e^{i\theta} = \cos\theta + i\sin\theta.$$
-This is usually proved by showing that the power series
+This is usually proved using the Taylor series of the exponential, sine, and cosine functions. You prove that
 $$\sum_{k=0} \frac{(i\theta)^k}{k!} = 1 + i\theta + \frac{(i\theta)^2}{2!} +\cdots$$
 converges and, by splitting the series into its real and imaginary parts, satisfies
 \begin{align*}
@@ -20,25 +50,28 @@ e^{i\theta} &= \sum_{k=0} \frac{(i\theta)^k}{k!}\\
             + i\sum_{k=0} (-1)^k \frac{\theta^{2k+1}}{(2k+1)!}\\
             &= \cos\theta + i\sin\theta.
 \end{align*}  
-Here, we assume that the functions $\sin$ and $\cos$ are either defined by their power series or have been shown to be equal to the respective power series.
 </p>
 
-Here, I propose a different approach using differential equations. However, since the differential equations are constant coefficient linear ODEs, no prior knowledge of ODEs is needed. In particular, it is easy to prove the existence andu niqueness of solutions to the ODEs that arise, using only the fundamental theorem of calculus and basic real analysis. This leads to what I consider to be a more geometrically natural approach.
+<p>
+Here, I provide an alternative approach that I think elucidates why we care so much about the exponential function. The explanation below requires only basic calculus. A rigorous discussion requires knowledge of basic real analysis, notably the Arzela-Ascoli theorem.
+</p>
+
+### Exponential of a real number
 
 <p>
 We start by postulating what we mean by an exponential function of a real number. A function
 $$ E: \R \rightarrow \R $$
-is said to be growing or decaying exponentially if its derivative is proportional to itself. In other words, it is differentiable and satisfies the equation
+is said to be growing or decaying exponentially if its derivative is proportional to itself. In other words, it is differentiable and, for some real constant $k$, satisfies the equation
 \begin{equation} E' = kE. \label{ode}\end{equation}
 Applying the fundamental theorem of calculus, this is equivalent to the equation
-\begin{equation} E(x) = e_0 + k\int_{\tau=0}^{\tau=t} E(\tau)\,d\tau. \label{integral}\end{equation}
+\begin{equation} E(t) = e_0 + k\int_{\tau=0}^{\tau=t} E(\tau)\,d\tau. \label{integral}\end{equation}
 It is straightforward, using a contraction mapping argument, that, given $e_0 \in \R$ , there is a unique differentiable function $E_k: \R \rightarrow \R$ satisfying \eqref{integral} and therefore \eqref{ode} with $E_k(0) = e_0$.
 </p>
 
 <p>
 We want, however, to restrict to functions that satisfy $E(0)=1$. For each $k \in \R$, let $e_k$ denote the unique function that satisfies
 $$ e_k' = ke_k\text{ and }e_k(0) = 1.$$
-It is straightforward to show that for any $k, s, t \in \R$,
+It is straightforward to show that for any $s, t \in \R$,
 \begin{align*}
 e_k(s+t) &= e_k(s)e_k(t).
 \end{align*}
@@ -54,7 +87,7 @@ $$e_1(t) = e^t.$$
 We now turn to the exponential function of a pure imaginary number. At first sight, this is problematic, because
 $$ e_1(i\theta) $$
 cannot be defined by solving \eqref{ode}, because $t$ would have to be complex. The crucial observation is that, in the real case, it follows by the existence and uniqueness of solutions to \eqref{ode} and the chain rule that
-$$ e^(kt) = e_1(kt) = e_k(t). $$
+$$ e^{kt} = e_1(kt) = e_k(t). $$
 This now allows us to define the exponential of an imaginary number $i\theta$ to be $e_i(\theta)$, where $e_i$ is the unique solution to the ODE
 \begin{equation} e_i' = ie_i\text{ and }e_i(0) = 1. \label{ode2} \end{equation}
 If we write $e_i(t) = x(t) + iy(t)$, this is equivalent to the system
@@ -97,11 +130,17 @@ We can now define the functions
 \cos\theta &= x(\theta)\\
 \sin\theta &= y(\theta).
 \end{align*}
-A direct consequence is Euler's formula
-$$ e^{i\theta} = \cos\theta + i\sin\theta. $$
-It is now straightforward to use the symmetries of \eqref{ode2} to derive all of the basic properties of the sine and cosine functions:
+Direct consequences include
+$$ (\sin\theta)^2 + (\cos\theta)^2 = 1, $$
+Euler's formula
+$$ e^{i\theta} = \cos\theta + i\sin\theta, $$
+and
 \begin{align*}
-(\sin\theta)^2 + (\cos\theta)^2 &= 1\\
+\frac{d}{d\theta}(\sin\theta) &= \cos\theta\\
+\frac{d}{d\theta}(\cos\theta) &= -\sin\theta.
+\end{align*}
+It is also straightforward to use the symmetries of \eqref{ode2} to derive all of the basic properties of the sine and cosine functions, such as:
+\begin{align*}
 \sin(n\pi) &= 0\\
 \sin\left(\frac{\pi}{2}+2\pi n\right) &= 1\\
 \sin\left(\frac{3\pi}{2}+2\pi n\right) &= -1\\
@@ -110,27 +149,159 @@ It is now straightforward to use the symmetries of \eqref{ode2} to derive all of
 \cos\left(\frac{\pi}{2}+n\pi\right) &= 0,
 \end{align*}
 where $n$ is any integer.
-All of the trigonometric identities also follow easily by raising $e^{i\theta}$ to integer and rational powers.
+Many trigonometric identities also follow easily by raising $e^{i\theta}$ to integer and rational powers.
 </p>
 
 <p>
 Finally, it is now obvious how to define the exponential of a complex number $z$, namely
 $$ e^{z} = e_z(1), $$
 where $e_z$ is the unique solution to the ODE
-$$
+\begin{equation}\label{ode3}
 e_z' = ze_z\text{ and }e_z(0) = 1.
-$$
+\end{equation}
 Again, it is straightforward to show that
 $$
 e^{x+iy} = e^xe^{iy}.
 $$
 </p>
 
+### Summary
 <p>
-We have now succeeded in obtaining the following, using only basic calculus, including the fundamental theorem of calculus, and basic real analysis:
+We have succeeded in using only basic calculus and basic real analysis to obtain the following in a natural and intuitive way:
 <ul>
 <li>Definitions of the constants $e$ and $\pi$</li>
-<li>Definitions and fundamental properties of the functions $e^z$, $\sin\theta$, $\cos\theta$, including Euler's formula</li>
+<li>Definitions and fundamental properties of the functions $e^z$, $\sin\theta$, $\cos\theta$,
+including Euler's formula</li>
 </ul>
+</p>
+
+### Appendix
+
+#### Convergence of continuous functions on a compact interval
+
+Given a compact interval $I \subset \R$, let $C(I)$ denote the space of continuous complex-valued functions with domain $I$.
+
+<p>
+A sequence $f_0, f_1, \dots \in C(I)$ is a <b>Cauchy sequence</b> if for any $\epsilon > 0$, there exists $N>0$ such that for any $j, k \ge N$,
+\[
+  \|f_j-f_k\| \le \epsilon.
+\]
+</p>
+
+<p>
+<b>Lemma 1.</b>
+  Given a compact interval $I$, any Cauchy sequence $f_0, f_1, \dots \in C(I)$ converges to a limit $f \in C(I)$.
+</p>
+
+#### Contraction map
+
+<p>
+A map $\Phi: C(I) \rightarrow C(I)$ is a contraction mapping if there exists $c < 1$ such thatfor any $f_1, f_2 \in C(I)$,
+\[
+  \|\Phi(f_)) - \Phi(f_2)\| \le c \|f_1-f_2\|.
+\]
+</p>
+
+<p><b>Lemma 2.</b>
+  If $\Phi: C(I) \rightarrow C(I)$ is a contraction map, then there exists a unique $f \in C(I)$ satisfying
+  \begin{equation}\label{fixed}
+    \Phi(f) = f.
+  \end{equation}
+</p>
+
+<p><b>Proof.</b>
+  Let $f_0 = 0$ and for each $k \ge 0$, let
+  \[
+    f_{k+1} = \Phi(f_k).
+  \]
+  First, for any $i > 0$,
+  \begin{align*}
+    \|f_{i+1}-f_{i}\| &= \|\Phi(f_{i})-\Phi(f_{i-1})\|\\
+                      & \le c\|f_{i}-f_{i-1}\|\\
+    \dots &= c^i\|f_1-f_0\|.
+  \end{align*}
+  Therefore, for any $j, k > 0$,
+  \begin{align*}
+    \|f_k-f_j\|
+    &= \left\|\sum_{i=j}^{i=k-1} f_{i+1} - f_{i}\right\|\\
+    &\le \sum_{i=j}^{i=k-1} \|f_{i+1} - f_i\|\\
+    &\le \sum_{i=j}^{i=k-1} c^i\|f_1-f_0\|\\
+    &= \frac{c^j}{1-c}\|f_1-f_0\|.
+  \end{align*}
+  For any $\epsilon > 0$, if $N$ satisfies
+  \[
+    \frac{c^N}{1-c} \le \epsilon,
+  \]
+  then for any $j, k \ge N$,
+  \[
+    \|f_k-f_j\| \le \epsilon.
+  \]
+  It follows that the sequence $f_0, f_1, \dots$ is a Cauchy sequence and therefore, by Lemma~\ref{cauchy} has a limit $f \in C(I)$. Moreover, $\Phi(f_0), \Phi(f_1), \dots$ is also a Cauchy sequence. Therefore,
+  \begin{align*}
+    f &= \lim_{k\rightarrow\infty} f_{k+1}\\
+      &= \lim_{k\rightarrow\infty} \Phi(f_k)\\
+      &= \Phi(f),
+  \end{align*}
+  which shows that $f$ satisfies \eqref{fixed}.
+  If $f_1, f_2$ both satisfy \eqref{fixed}, then
+  \begin{align*}
+    \|f_1-f_2\| &= \|\Phi(f_1)-\Phi(f_2)\|\\
+                &\le c\|f_1-f_2\|,
+  \end{align*}
+  which implies that
+  \[
+    (1-c)\|f_1-f_2\| = 0.
+  \]
+  This proves the uniqueness of the solution.
+</p>
+
+#### Existence and uniqueness of solution to \eqref{ode3}
+
+<p><b>Theorem.</b>
+Given $e_0, z \in \C$, there exists a unique differentiable function $e: \R \rightarrow \C$ satisfying
+\begin{equation}\label{ivp}
+  e' = ze\text{ and }e(0) = e_0.
+\end{equation}
+</p>
+
+<p><b>Proof.</b>
+  Fix $T \in \R$, $\delta > 0$, and $e_T \in \R$.
+  If $e \in C^1([T-\delta,T+\delta])$ satisfies
+  \begin{equation}\label{ivp2}
+  e' = ze\text{ and }e(T) = e_T
+  \end{equation}
+  then, by the fundamental theorem of calculus,
+  \begin{equation}\label{integral-equation}
+      e(t) = e_0 + z\int_{\tau=T-\delta}^{\tau=t} e(\tau)\,d\tau.
+  \end{equation}
+  Let $\Phi: C([T-\delta,T+\delta]) \rightarrow C([T-\delta,T+\delta])$ be given by
+  \[
+    \Phi(f)(t) = e_T + \int_{\tau=T}^{\tau=t} f(\tau)\,d\tau.
+  \]
+  Then
+  \begin{align*}
+    \|\Phi(f_1)-\Phi(f_2)\|
+    &\le |z|\left\|z\int_{\tau=T}^{\tau=T+\delta} |f_1(\tau)-f_2(\tau)|\,d\tau\right\|\\
+    &\le |z|\delta\|f_1-\|f_2\|.
+  \end{align*}
+  Therefore, if
+  \[
+    |z|\delta < 1,
+  \]
+  then $\Phi$ is a contraction map and therefore, there is a unique solution $e \in C([T-\delta,T+\delta])$ to \eqref{integral}. Observe that the equation implies that if $e \in C([T-\delta,T+\delta])$, then $e \in C^1([T-\delta,T+\delta])$. Differentiating \eqref{integral} yields \eqref{ivp}. Observe that in fact $e \in C^\infty([T-\delta,T+\delta])$.
+
+  We now want to prove the existence of a solution on $\R$. For each $k \in \Z$, let
+  \[
+    T_k = \frac{k\delta}{2}
+  \]
+  and
+  \[
+    I_k = [T_k-\delta,T_k+\delta] = \left[\frac{(k-2)\delta}{2}, \frac{(k+2)\delta}{2}\right].
+  \]
+  Observe that
+  \[
+    I_{k}\cap I_{k+1} = [ ... ].
+  \]
+  It follows that any solution $e \in C(I_k)$ extends uniquely to a solution $e \in C(I_{k-1}\cup I_k \cup I_{k+1})$. By induction, there is a unique continuous solution $e$ to \eqref{ivp}.
 </p>
 
