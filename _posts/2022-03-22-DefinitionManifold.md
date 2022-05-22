@@ -17,7 +17,7 @@ $$\phi_2\circ\phi_1^{-1}: \phi_1(O_1\cap O_2) \rightarrow \phi_2(O_1\cap O_2) $$
 
 is a homeomorphism. A topological manifold is a set $M$ with a topological atlas.
 
-Observe that there is now a unique topology on $M$ such that all coordinate maps are continuous. It is the topology where given any coordinate map $\phi: O \rightarrow \R^n$ and open subset $U \subset \phi(O)$, $\phi^{-1}(U)$ is open. The assumption on the change of coordinate maps is exactly what is needed for this definition to be logically consistent.
+Observe that this defines a topology on $M$, where any coordinate map $\phi: O \rightarrow \phi(O) \subset \R^n$ is a homeomorphism. The assumption on the change of coordinate maps is exactly what is needed for this definition to be logically consistent.
 
 Usually (but not always), there is one more assumption made, which I like to state as follows:
 
