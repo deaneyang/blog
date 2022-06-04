@@ -11,15 +11,15 @@ $\newcommand\extVo{\Lambda^nV^*\backslash\{0\}}$
 $\newcommand\extT{\Lambda^nT^*M}$
 </p>
 
-A lot of differential geometry starts with linear or tensor algebra. I like to say that a manifold is a parameterized family of vector spaces.
+It always starts with linear algebra. I like to say that differential geometry is the study of parameterized families of vector spaces.
 
 ### Orientation of a vector space
 
 The first observation is that a $1$-dimensional vector space with the origin removed has two connected components. There is no natural way of labeling one as positive and the other as negative. The second observation is that if $V$ is an $n$-dimensional vector space, then the vector space $\extV$ of exterior $n$-tensors is $1$-dimensional.
 
-An orientation on $V$ is defined by choosing one of the connected components of $\extV$. Let's call that component $\extV_+$. Given any nonzero $\Theta \in \extV$, we say that $\Theta$ has positive orientation if $\Theta \in \extV_+$ and negative orientation otherwise.
+An orientation on $V$ is defined by choosing one of the connected components of $\extVo$. Let's call that component $\extV_+$. Given any nonzero $\Theta \in \extV$, we say that $\Theta$ has positive orientation if $\Theta \in \extV_+$ and negative orientation otherwise.
 
-Conversely, any nonzero $\Theta \in \extV$ uniquely determines an orientation on $V$ by letting $\extV_+$ be the component containing $\Theta$.
+Conversely, any nonzero $\Theta \in \extV$ uniquely determines an orientation on $V$ by letting $\extV_+$ be the connected component of $\extVo$ that contains $\Theta$.
 
 Also, note that $\Theta_1, \Theta_2 \in \extVo$ have the same orientation if and only if $\Theta_2 = c \Theta_1$ for some $c > 0$.
 
