@@ -4,3 +4,5 @@ _site
 .jekyll-metadata
 vendor
 disabled
+*DS_Store
+*~
