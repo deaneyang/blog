@@ -68,12 +68,14 @@ $$
 is constant with respect to $x$ (but depends on $\Delta$). If $f$ is assumed to be differentiable, it can be shown that this implies $f'$ is constant and $f$ is linear.
 </p>
 
+<p>
 An exponential function has a similar definition except that, for a given $\Delta > 0$, the percentage change of $f$ (instead of the change in $f$) is constant. It is necessary, however, to assume that $f$ is never zero.
 We therefore say that a function $E: \R \rightarrow (0,\infty)$ is <b>exponential</b> if, for $\Delta \ne 0$,
 $$
 \frac{E(x+\Delta)}{E(x)}
 $$
-is a constant with respect to $x$ (but depends on $\Delta).
+is a constant with respect to $x$ (but depends on $\Delta$).
+</p>
 
 The following is proved in the Appendix:
 
