@@ -6,22 +6,27 @@ categories: blog math exponential-function euler-formula
 ---
 $\newcommand\R{\mathbb{R}}\newcommand\C{\mathbb{C}}\newcommand\Z{\mathbb{Z}}$
 
+
+Most of this post is identical to an older post. Both posts were driven by a desire to explain and prove Eulder's formula,
+\begin{equation}\label{euler}
+e^{i\theta} = \cos\theta + i\sin \theta,
+\end{equation}
+in a more conceptual way than the proof using power series. In the original post, I tried to avoid power series completely. This post has the same conceptual explanation of Euler's formula but uses power series as the key technical tool in the rigorous proofs.
+
 <p><b>Acknowledgements.</b> <i>This was provoked by a <a href="https://www.quantamagazine.org/how-infinite-series-reveal-the-unity-of-mathematics-20220124/">Quanta Magazine article by Steven Strogatz on how to prove Euler's formula using power series.</a> The discussion below was inspired by Michael Hutchings' observation that Euler's formula can be proved by solving an ordinary differential equation.</i> I'd also like to thank Dan Lee, Keith Conrad, and my other Facebook friends for their comments and corrections.</p>
 
 ### Introduction
 
 <p>
-Euler's formula states that given any real number $\theta$,
-$$e^{i\theta} = \cos\theta + i\sin\theta.$$
-At first, even the meaning of the left side is unclear. The standard approach is to use power series to define $e^{i\theta}$ and prove Euler's formula. The argument is outlined below. It is simple and elegant. I have, however, always found it unsatisfying, since it provides little intuition into what's going on.
+At first, even the meaning of the left side of Euler's formula \eqref{euler} is unclear. The standard approach is to use power series to define $e^{i\theta}$ and prove Euler's formula. The argument is outlined below. It is simple and elegant. I have, however, always found it unsatisfying, since the power series alone provides little intuition into what's going on.
 </p>
 
 <p>
-Here, I provide an alternative approach that I find that is easier to understand intuitively.. Moreover, it accomplishes much more. From nothing more than elementary calculus (and some elementary real analysis if you want rigorous proofs), it provides definitions of the constants $\pi$ and $e$, as well as definitions and basic properties of the exponential, sine, and cosine functions, including Euler's formula.
+Here, I provide an alternative approach that I find that is easier to understand intuitively. Moreover, it accomplishes much more. Using only calculus, it provides definitions of the constants $\pi$ and $e$, as well as definitions and basic properties of the exponential, sine, and cosine functions, including Euler's formula.
 </p>
 
 <p>
-In a previous post, I tried to present everything without using power series at all. Since I wrote that, I have realized that power series does play a useful role here, but a purely technical one.
+The exposition here does not require the use of power series. Power series are needed only for rigorous proofs of what is stated.
 </p>
 
 ### Power series proof of Euler's formula
@@ -51,50 +56,48 @@ This is simple and elegant, but the proof provides little intuition to what is g
 Below is an alternative approach that I think elucidates how the exponential function of both real and imaginary numbers arise and why exponential of an imaginary number has a geometric interpretation. The explanation below requires only basic calculus. A rigorous discussion requires the basics of when a power series converges.
 </p>
 
-### Exponential of a real number
+### Exponential function of a real number
 
 We start by postulating what we mean by an exponential function of a real number.
 
 <p>
-First, recall that a function $f: \R \rightarrow \R$ is <b>linear</b> if, for a fixed value of $\Delta \ne 0$, the difference
+First, recall that a function $f: \R \rightarrow \R$ is <b>linear</b> if, for any $\Delta \ne 0$, the change in $f$
 $$
 f(x+\Delta) - f(x)
 $$
-is the same, no matter what $x$ is. If $f$ is assumed to be differentiable, this is equivalent to saying $f'$ is constant.
+is constant with respect to $x$ (but depends on $\Delta$). If $f$ is assumed to be differentiable, it can be shown that this implies $f'$ is constant and $f$ is linear.
 </p>
 
-To define an exponential function, we look at the percentage change in the output, instead of the difference. This, however, works only if the function is never zero.
-
-<p>
-We therefore say that a function $E: \R \rightarrow (0,\infty)$ is <b>exponential</b> if, for a fixed value of $\Delta \ne 0$,
+An exponential function has a similar definition except that, for a given $\Delta > 0$, the percentage change of $f$ (instead of the change in $f$) is constant. It is necessary, however, to assume that $f$ is never zero.
+We therefore say that a function $E: \R \rightarrow (0,\infty)$ is <b>exponential</b> if, for $\Delta \ne 0$,
 $$
 \frac{E(x+\Delta)}{E(x)}
 $$
-is the same, no matter what $x$ is. If $E$ is assumed to be differentiable, this is equivalent to saying that $E'$ is proportional to $E$. In other words, there exists a real constant $k$ such that $E$ satisfies the equation
-\begin{equation} E' = kE. \label{ode}\end{equation}
-An important property of this equation is called <b>translation invariance</b>. This says that if $E: \R \rightarrow \R$ is a solution to \eqref{ode} and $s \in \R$, the function $E_s$ given by
+is a constant with respect to $x$ (but depends on $\Delta).
+
+The following is proved in the Appendix:
+
+<div class="theorem">
+Given any $\kappa, e_0 \in \R$, there exists a unique smooth function $E: \R \rightarrow \R$ satisfying
+\begin{equation}\label{ode}
+E' = \kappa E\text{ and }E(0) = e_0.
+\end{equation}
+</div>
+
+<p>
+One important property of this equation is called <b>translation invariance</b>. This says that if $E: \R \rightarrow \R$ is a solution to \eqref{ode} and $s \in \R$, the function $E_s$ given by
 \[
 E_s(t) = E(s+t)
 \]
-is also a solution to \eqref{ode}. This property follows by the chain rule and is exploited, both explicitly and implicitly, extensively below.
+also satisfies the ode $E_s' = \kappa E_s$ with $E_s(0) = E(s)$. This property follows by the chain rule and is exploited, both explicitly and implicitly, extensively below.
 </p>
 
 <p>
-Theorem A in the appendix implies the following:
-</p>
-
-<p><b>Theorem</b>. Given any $k, e_0 \in \R$, there exists a unique smooth function $e$ satisfying
-\begin{equation}
-E' = kE\text{ and }E(0) = e_0.
-\end{equation}
-</p>
-
-<p>
-We want, however, to restrict to functions that satisfy $E(0)=1$. For each $k \in \R$, let $e_k: \R \rightarrow \R$ denote the unique function that satisfies
-$$ e_k' = ke_k\text{ and }e_k(0) = 1.$$
+We want, however, to restrict to functions that satisfy $E(0)=1$. For each $\kappa \in \R$, let $e_\kappa: \R \rightarrow \R$ denote the unique function that satisfies
+$$ e_\kappa' = \kappa e_\kappa\text{ and }e_\kappa(0) = 1.$$
 It is straightforward, using the theorem above, to show that for any $s, t \in \R$,
 \begin{align*}
-e_k(s+t) &= e_k(s)e_k(t).
+e_\kappa(s+t) &= e_\kappa(s)e_\kappa(t).
 \end{align*}
 This in turn implies that, if we define
 $$ e = e_1(1),$$
@@ -107,38 +110,39 @@ $$e_1(t) = e^t.$$
 ### Exponential of an imaginary number
 
 <p>
-We now turn to the exponential function of a pure imaginary number. At first sight, this is problematic, because
+We now turn to the exponential function of a pure imaginary number. The idea is to use an equation like \eqref{ode}. At first sight, this is problematic, because
 $$ e_1(i\theta) $$
 cannot be defined by solving \eqref{ode}, because $t$ would have to be complex. The crucial observation is that, in the real case, the theorem above and the chain rule imply that
-$$ e^{kt} = e_1(kt) = e_k(t). $$
+$$ e^{\kappa t} = e_1(\kappa t) = e_\kappa(t). $$
 So the trick is to solve for a function $e_i$ satisfying
 \begin{equation} e_i' = ie_i\text{ and }e_i(0) = 1. \label{ode2} \end{equation}
-By Theorem A in the appendix, there is a unique solution.
-This also has the property that
-$$ e_i(\theta_1 + \theta_2) = e_i(\theta_1)e_i(\theta_2), $$
-which justifies writing, for any $\theta \in \R$,
-$$ e_i(\theta) = e^{i\theta}. $$
+It again follows by Theorem A in the appendix that there is a unique solution to \eqref{ode2} and
+that for any $t_1, t_2 \in \R$,
+$$ e_i(t_1 + t_2) = e_i(t_1)e_i(t_2), $$
+which justifies writing, for any $t \in \R$,
+$$ e_i(t) = e^{it}. $$
 </p>
 
 <p>
 We now want to understand this function better. If we write $e_i(t) = x(t) + iy(t)$, then \eqref{ode2} is equivalent to the system
-\begin{align*}
+\begin{align}\label{ode3}
 (x',y') &= (-y,x)\text{ and }(x(0),y(0)) = (1,0).
-\end{align*}
+\end{align}
 A solution to this satisfies
 $$
-(x',y')\cdot (x,y) = x'x + y'y = -yx + xy = 0
+(x',y')\cdot (x,y) = x'x + y'y = -yx + xy = 0.
 $$
-and therefore is a parameterized curve whose velocity vector
+Therefore, $(x(t),y(t))$, $t \in \R$, is a parameterized curve whose velocity vector
 $$
 v = (x', y')
 $$
-is always orthoronal to the position vector $(x,y)$.
-It also follows easily that
+is always orthogonal to the position vector $(x,y)$.
+It follows easily from \eqref{ode3} that
 \begin{align*}
 x^2 + y^2 &= 1\\
 (x')^2+(y')^2 &= 1.
 \end{align*}
+The first equation says the curve always lies on the unit circle centered at the origin. The second says that the speed, which is the norm of the velocity vector, is always equal to $1$.
 Putting this all together, we see that the solution is a unit speed parameterization of the circle.
 </p>
 
@@ -147,7 +151,7 @@ Putting this all together, we see that the solution is a unit speed parameteriza
 </p>
 
 <p>
-It is shown in the appendix that there exists $T > 0$ such that
+It is shown in the appendix (to be added) that there exists $T > 0$ such that
 $$
 z(T) = z(0).
 $$
@@ -159,7 +163,7 @@ We can now define the constant $\pi$ by
 $$
 T = 2\pi.
 $$
-and the functions
+and the basic trig functions by
 \begin{align*}
 \cos\theta &= x(\theta)\\
 \sin\theta &= y(\theta).
@@ -192,7 +196,7 @@ Many trigonometric identities also follow easily by raising $e^{i\theta}$ to int
 Finally, it is now obvious how to define the exponential of a complex number $z$, namely
 $$ e^{z} = e_z(1), $$
 where $e_z$ is the unique solution to the ODE
-\begin{equation}\label{ode3}
+\begin{equation}\label{ode4}
 e_z' = ze_z\text{ and }e_z(0) = 1.
 \end{equation}
 Again, it is straightforward to show that
@@ -207,102 +211,132 @@ $$
 
 ### Summary
 <p>
-We have succeeded in using only basic calculus and basic real analysis to obtain the following in a natural and intuitive way:
+We have succeeded in using only calculus to obtain the following in a natural and intuitive way:
 <ul>
 <li>Definitions of the constants $e$ and $\pi$</li>
 <li>Definitions and fundamental properties of the functions $e^z$, $\sin\theta$, $\cos\theta$</li>
-<li>In particular, Euler's formula</li>
+<li>Euler's formula</li>
 </ul>
 </p>
 
 ### Appendix
 
-We recall some basic facts about series, i.e., infinite sums of real and complex numbers.
+#### Derivative of an exponential function is proportional to the function
 
-#### Geometric series
-
-<p>
-First, recall that if $a, r \in\R$, then the geometric series
-$$
-a + ar + ar^2 + \cdots = \sum_{k=0}^\infty ar^k
-$$
-converges if $|r| < 1$. Its value can be calculated explicitly,
+<div class="lemma">
+Let $f: \R \rightarrow \R$ be a differentiable function such that for any $\delta \in \R$, there exists $r_\delta > 0$ such that
 \begin{align*}
-a + ar + ar^2 + \cdots &= \lim_{n\rightarrow\infty} a + ar + \cdots + ar^n\\
-&=a\lim_{n\rightarrow\infty} 1 + r + \cdots + r^n\\
-&= a\lim_{n\rightarrow\infty} \frac{1 - r^{n+1}}{1-r}\\
-&=  \frac{a}{1-r}.
+  \frac{f(x+\delta)}{f(x)} = r_\delta\text{, for any }x \in \R.
 \end{align*}
-</p>
+Then there exists $\kappa \in \R$ such that
+$$
+f' = \kappa f.
+$$
+</div>
 
-### Ratio test for a series
+<div class="proof">
+  First, observe that, given any $\delta$,
+  \begin{align*}
+    r_\delta &= \frac{f(x+\delta)}{f(x)}\\
+        &= \frac{f(x+1)}{f(x+\frac{\delta}{2})}\frac{f(x+\frac{\delta}{2})}{f(x)}\\
+             &= r_{\frac{\delta}{2}}^2.
+  \end{align*}
+  Iterating this and denoting $r = r_1$, we find that for any $N \in \Z^+$,
+  \begin{align*}
+    r &= (r_{2^{-N}})^{2^N}.
+  \end{align*}
+  It follows that
+  \begin{align*}
+    \frac{f(x+2^{-N}) - f(x)}{2^{-N}}
+    &= f(x)2^N\left(\frac{f(x+2^{-N})}{f(x)}-1\right)\\
+    &= f(x)2^N(r^{2^{-N}}-1)\\
+    &= f(x)\kappa_N,
+  \end{align*}
+  where
+  \begin{align*}
+    \kappa_N &= 2^N(r^{2^{-N}}-1).
+  \end{align*}
+  Since
+  \begin{align*}
+    \kappa_N &= 2^N(r^{2^{-N}}-1)\\
+             &= 2^{N}(r^{2^{-(N+1)}}-1)(r^{2^{-(N+1)}}+1)\\
+             &= \kappa_{N+1}\left(\frac{r^{2^{-(N+1)}}+1}{2}\right),
+  \end{align*}
+  it follows that $\kappa_N$ defines a bounded monotone sequence and converges to a limit $\kappa \in \R$. Since $f$ is differentiable,
+  \begin{align*}
+    f'(x) &= \lim_{N\rightarrow\infty}\frac{f(x+2^{-N})-f(x)}{2^{-N}}\\
+          &= f(x)\lim_{N\rightarrow\infty} \kappa_N\\
+          &= \kappa f(x).
+  \end{align*}
+  </div>
+<br>
 
-<p>
-Observe that the ratio of any two consecutive terms in the geometric series above is always equal to $r$. Consider a series
-$$
-a_0 + a_1 + \cdots = \sum_{k=0}^\infty a_k,
-$$
-where we assume all of the terms $a_k$ are positive. For each positive integer $k$, let
-$$ r_k = \left|\frac{a_k}{a_{k-1}}\right|. $$
-It can be shown that if
-$$
-\limsup_k r_k < 1,
-$$
-then the series converges.
-</p>
+#### Existence and uniqueness of solutions to \eqref{ode}, \eqref{ode2}, \eqref{ode4}
 
-### Ratio test for a power series
-
-<p>
-A power series is like a polynomial but with infinitely many terms. Given coefficients $c_0, c_1, \dots \in \R$, consider the power series
-$$
-c_0 + c_1t + c_2t^2 + \cdots = \sum_{k=0}^\infty c_kt^k.
-$$
-Assume all of the coefficients $c_k$ are nonzero. This sum converges trivially if $t = 0$. By the ratio test for series, the power series converges for $t \ne 0$ if
-$$
-\limsup_k \left|\frac{c_k}{c_{k-1}}t\right| < 1.
-$$
-Therefore, if $R > 0$ satisfies
-$$
-\left|\frac{c_k}{c_{k-1}}\right| < \frac{1}{R},
-$$
-then the power series converges for all $t$ such that
-$$
-|t| < R.
-$$
-$R$ is called the radius of convergence for the power series.
-</p>
-
-<p>
-If the ratio test for the power series holds for all $R > 0$, then the power series defines a smooth function $f: \R \rightarrow \R$, where the coefficients are given by
-$$
- c_k = \frac{f^{(k)}(0)}{k!}.
-$$
-Moreover, the derivative of $f$ is also a smooth function on $\R$ given by the power series obtained by differentiating each term of the power series of $f$,
-$$
-f'(t) = \sum_{k=1}^\infty kc_kt^{k-1} = \sum_{k=0}^\infty (k+1)c_{k+1}t^k.
-$$
-</p>
-
-#### Series of complex numbers and power series with complex coefficients
-
-All of the results above still hold when the terms of a series and the coefficients of a power series are complex numbers.
-
-#### Existence and uniqueness of solution to \eqref{ode3}
-
-<p><b>Theorem A.</b>
+<div class="theorem">
 Given $e_0, z \in \C$, there exists a unique differentiable function $e: \R \rightarrow \C$ satisfying
 \begin{equation}\label{ivp}
   e' = ze\text{ and }e(0) = e_0.
 \end{equation}
-</p>
+</div>
 
-<p><b>Proof.</b>
-We solve for $e$ as a power series and show that the power series has infinite radius of convergence. Suppose
+<div class="proof">
+<p> Consider the power series
 $$
 e(t) = \sum_{k=0} c_kt^k.
 $$
-Equation \eqref{ivp} implies that $c_0 = e_0$ and
+If $e$ satisfies equation \eqref{ivp} implies that $c_0 = e_0$ and
 $$
+\sum_{k=0}^\infty (k+1)c_{k+1}t^k = \sum_{k=0}^\infty zkc_kt^k,
+$$
+which in turns implies that for any $k \ge 0$,
+$$
+c_{k+1} = \frac{z}{k+1}c_k.
+$$
+By induction, we see that
+$$
+c_k = \frac{z^k}{k!},
+$$
+Therefore, the power series for $e$ is
+$$
+e_0\sum_{k=0}^\infty \frac{(zt)^k}{k!}.
+$$
+It is easily checked that by the ratio test for series, the series converges for all $t \in \R$. This also implies that the power series for $e'$ also converges for all $t \in \R$ and the function $e$ satisfies \eqref{ivp}.
 </p>
+
+<p>
+Now suppose $e_1$ and $e_2$ are both solutions to \eqref{ivp}. Then the function $f = e_2-e_1$ satisfies
+\begin{equation}\label{ivpz}
+  f' = zf\text{ and }f(0) = 0.
+\end{equation}
+We want to show that this implies $f=0$ on $\R$.
+</p>
+
+<p>
+Let $T > 0$ and denote
+$$
+\|f\| = \max \{|f(t)|\ :\ t \in [t_0-T,t_0+T]\}.
+$$
+By the fundamental theorem of calculus,
+\begin{align*}
+f(t) &= f(t)-f(t_0)\\
+     &=  \int_{s=t_0}^{s=t}f'(s)\,ds\\
+     &=  z\int_{s=t_0}^{s=t}f(s)\,ds.
+\end{align*}
+and therefore
+\begin{align*}
+\|f\| &= |z|\max_{t\in[t_0-T,t_0+T]}\left|\int_{s=t_0}^{s=t}f(s)\,ds\right|\\
+&\le |z|T\|f\|
+\end{align*}
+It follows that if
+$$
+|z| < \frac{1}{T},
+$$
+then $\|f\|=0$. By applying this repeatedly with
+$$
+t_0 = k\frac{T}{2},\ k \in \Z,
+$$
+it follows that $f(t) = 0$ for all $t \in \R$.
+</p>
+</div>
 

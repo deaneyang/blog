@@ -8,6 +8,10 @@
     font-weight: bold;
     font-style: normal;
 }
+.theorem:after {
+    content: "\a";
+    white-space: pre;
+}
 .lemma {
     display: block;
     margin: 12px 0;
@@ -38,8 +42,9 @@
     font-style: italic;
 }
 .proof:after {
-    content: "\25FC";
+    content: "\25FC\a\a";
     float:right;
+    white-space: pre;
 }
 .definition {
     display: block;
