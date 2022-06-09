@@ -7,11 +7,13 @@ categories: blog math exponential-function euler-formula
 $\newcommand\R{\mathbb{R}}\newcommand\C{\mathbb{C}}\newcommand\Z{\mathbb{Z}}$
 
 
+<p>
 Most of this post is identical to an older post. Both posts were driven by a desire to explain and prove Eulder's formula,
 \begin{equation}\label{euler}
 e^{i\theta} = \cos\theta + i\sin \theta,
 \end{equation}
 in a more conceptual way than the proof using power series. In the original post, I tried to avoid power series completely. This post has the same conceptual explanation of Euler's formula but uses power series as the key technical tool in the rigorous proofs.
+</p>
 
 <p><b>Acknowledgements.</b> <i>This was provoked by a <a href="https://www.quantamagazine.org/how-infinite-series-reveal-the-unity-of-mathematics-20220124/">Quanta Magazine article by Steven Strogatz on how to prove Euler's formula using power series.</a> The discussion below was inspired by Michael Hutchings' observation that Euler's formula can be proved by solving an ordinary differential equation.</i> I'd also like to thank Dan Lee, Keith Conrad, and my other Facebook friends for their comments and corrections.</p>
 
@@ -153,19 +155,19 @@ Putting this all together, we see that the solution is a unit speed parameteriza
 </p>
 
 <p>
-It is shown in the appendix (to be added) that there exists $T > 0$ such that
+Since the parameterization has unit speed, it is intuitively clear that the solution to \eqref{ode3} goes around the entire circle. In particular, there exists $T > 0$ such that
 $$
 z(T) = z(0).
 $$
-The translation invariance of \eqref{ode2} implies that $z$ is in fact periodic and, for any $\theta \in \R$,
+The translation invariance of \eqref{ode2} implies that $z$ is in fact periodic, which means that, for any $\theta \in \R$,
 $$
 z(\theta + T) = z(\theta).
 $$
-We can now define the constant $\pi$ by
+We can now define the constant $\pi$ by setting
 $$
 T = 2\pi.
 $$
-and the basic trig functions by
+We can also define the basic trig functions to be
 \begin{align*}
 \cos\theta &= x(\theta)\\
 \sin\theta &= y(\theta).
@@ -174,7 +176,7 @@ Direct consequences include
 $$ (\sin\theta)^2 + (\cos\theta)^2 = 1, $$
 Euler's formula
 $$ e^{i\theta} = \cos\theta + i\sin\theta, $$
-and
+and the standard differentiation formulas,
 \begin{align*}
 \frac{d}{d\theta}(\sin\theta) &= \cos\theta\\
 \frac{d}{d\theta}(\cos\theta) &= -\sin\theta.
@@ -341,4 +343,28 @@ $$
 it follows that $f(t) = 0$ for all $t \in \R$.
 </p>
 </div>
+
+#### A solution to \eqref{ode2} goes around the whole circle
+
+<p>
+We sketch a proof. The key point is that suppose we have solutions $(x_1,y_1): (a_1, b_1) \rightarrow \R^2$ and $(x_2,y_2): (a_2,b_2) \rightarrow \R^2$
+to
+$$ (x',y') = (-y,x) $$
+such that for some $t_1 \in(a_1,b_1)$ and $t_2 \in (a_2,b_2)$,
+$$
+(x_1,y_1)(t_1) = (x_2,y_2)(t_2).
+$$
+By the uniqueness of a solution to \eqref{ode2}, it follows that
+$$
+(x_1,y_1)(t) = (x_2,y_2)(t_2-t_1+t)
+$$
+for all $t \in (a_1,b_1)\cap (a_2-t_2+t_1,b_2-t_2+t_1)$. Therefore, the two solutions join together to form a single solution on the interval
+$$
+(\min(a_1,a_2-t_2+t_1),\max(b_1,b_2-t_2+t_1)).
+$$
+</p>
+
+<p>
+The idea now is to show that if the solution does not cover the whole circle, it can always be extended further. This implies that the solution does cover the whole circle.
+</p>
 
