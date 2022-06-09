@@ -93,7 +93,11 @@ One important property of this equation is called <b>translation invariance</b>.
 \[
 E_s(t) = E(s+t)
 \]
-also satisfies the ode $E_s' = \kappa E_s$ with $E_s(0) = E(s)$. This property follows by the chain rule and is exploited, both explicitly and implicitly, extensively below.
+satisfies
+$$
+E_s' = \kappa E_s\text{ and }E_s(0) = E(s).
+$$
+This property follows by the chain rule and is exploited, both explicitly and implicitly, extensively below.
 </p>
 
 <p>
@@ -157,22 +161,26 @@ Putting this all together, we see that the solution is a unit speed parameteriza
 <p>
 Since the parameterization has unit speed, it is intuitively clear that the solution to \eqref{ode3} goes around the entire circle. In particular, there exists $T > 0$ such that
 $$
-z(T) = z(0).
+e_i(T) = e_i(0).
 $$
-The translation invariance of \eqref{ode2} implies that $z$ is in fact periodic, which means that, for any $\theta \in \R$,
+The translation invariance of \eqref{ode2} implies that $z$ is in fact periodic, which means that, for any $t \in \R$,
 $$
-z(\theta + T) = z(\theta).
+e_i(t + T) = e_i(t).
 $$
-We can now define the constant $\pi$ by setting
+Now define the constant $\pi$ by setting
 $$
 T = 2\pi.
 $$
-We can also define the basic trig functions to be
+Since, for each $t \in [0,2\pi]$, $e_i(t) = (x(t),y(t))$ is point reached by traveling at unit speed along the circle staring from $(1,0)$, it follows that $t$ is the length of the arc from $(1,0)$ to $(x(t),y(t))$. In other words, $t$ is the angle in radians. In particular, the length of the full circle, i.e., its circumference, is $2\pi$.
+</p>
+
+<p>
+We can now define the basic trig functions to be, for any $\theta \in \R$,
 \begin{align*}
 \cos\theta &= x(\theta)\\
 \sin\theta &= y(\theta).
 \end{align*}
-Direct consequences include
+Direct consequences of everything above include
 $$ (\sin\theta)^2 + (\cos\theta)^2 = 1, $$
 Euler's formula
 $$ e^{i\theta} = \cos\theta + i\sin\theta, $$
