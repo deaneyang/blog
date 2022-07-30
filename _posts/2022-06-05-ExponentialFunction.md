@@ -103,7 +103,7 @@ where $\kappa = c'(0)$.
 Conversely, the following is proved in the Appendix:
 
 <div class="theorem">
-Given any $\kappa, e_0 \in \R$, there exists a unique smooth function $E: \R \rightarrow \R$ satisfying
+Given any $\kappa, e_0 \in \R$, there exists a unique differentiable function $E: \R \rightarrow \R$ satisfying
 \begin{equation}\label{ode}
 E' = \kappa E\text{ and }E(0) = e_0.
 \end{equation}
@@ -298,56 +298,6 @@ We have succeeded in using only calculus to obtain the following in a natural an
 </p>
 
 ### Appendix
-
-#### Derivative of an exponential function is proportional to the function
-
-<div class="lemma">
-Let $f: \R \rightarrow \R$ be a differentiable function such that for any $\delta \in \R$, there exists $r_\delta > 0$ such that
-\begin{align*}
-  \frac{f(x+\delta)}{f(x)} = r_\delta\text{, for any }x \in \R.
-\end{align*}
-Then there exists $\kappa \in \R$ such that
-$$
-f' = \kappa f.
-$$
-</div>
-
-<div class="proof">
-  First, observe that, given any $\delta$,
-  \begin{align*}
-    r_\delta &= \frac{f(x+\delta)}{f(x)}\\
-        &= \frac{f(x+1)}{f(x+\frac{\delta}{2})}\frac{f(x+\frac{\delta}{2})}{f(x)}\\
-             &= r_{\frac{\delta}{2}}^2.
-  \end{align*}
-  Iterating this and denoting $r = r_1$, we find that for any $N \in \Z^+$,
-  \begin{align*}
-    r &= (r_{2^{-N}})^{2^N}.
-  \end{align*}
-  It follows that
-  \begin{align*}
-    \frac{f(x+2^{-N}) - f(x)}{2^{-N}}
-    &= f(x)2^N\left(\frac{f(x+2^{-N})}{f(x)}-1\right)\\
-    &= f(x)2^N(r^{2^{-N}}-1)\\
-    &= f(x)\kappa_N,
-  \end{align*}
-  where
-  \begin{align*}
-    \kappa_N &= 2^N(r^{2^{-N}}-1).
-  \end{align*}
-  Since
-  \begin{align*}
-    \kappa_N &= 2^N(r^{2^{-N}}-1)\\
-             &= 2^{N}(r^{2^{-(N+1)}}-1)(r^{2^{-(N+1)}}+1)\\
-             &= \kappa_{N+1}\left(\frac{r^{2^{-(N+1)}}+1}{2}\right),
-  \end{align*}
-  it follows that $\kappa_N$ defines a bounded monotone sequence and converges to a limit $\kappa \in \R$. Since $f$ is differentiable,
-  \begin{align*}
-    f'(x) &= \lim_{N\rightarrow\infty}\frac{f(x+2^{-N})-f(x)}{2^{-N}}\\
-          &= f(x)\lim_{N\rightarrow\infty} \kappa_N\\
-          &= \kappa f(x).
-  \end{align*}
-  </div>
-<br>
 
 #### Existence and uniqueness of solutions to \eqref{ode}, \eqref{ode2}, \eqref{ode4}
 
