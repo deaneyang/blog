@@ -60,26 +60,47 @@ Below is an alternative approach that I think elucidates how the exponential fun
 
 ### Exponential function of a real number
 
-We start by postulating what we mean by an exponential function of a real number.
+We start by postulating what we mean by an exponential function.
+
+#### Linear function
 
 <p>
 First, recall that a function $f: \R \rightarrow \R$ is <b>linear</b> if, for any $\Delta \ne 0$, the change in $f$
 $$
 f(x+\Delta) - f(x)
 $$
-is constant with respect to $x$ (but depends on $\Delta$). If $f$ is assumed to be differentiable, it can be shown that this implies $f'$ is constant and $f$ is linear.
+is independent of $x$ and proportional to $\Delta$. In other words, there exists a constant $c \in \R$ such that for any $x, \Delta \in \R$,
+$$
+f(x+\Delta) - f(x) = c\Delta.
+$$
+If $f$ is assumed to be differentiable, then, by taking the limit $\Delta \rightarrow 0$, then
+$$
+f'(x) = \lim_{\Delta\rightarrow 0} \frac{f(x+\Delta)-f(x)}{\Delta} = c.
+$$
 </p>
+
+#### Exponential function
 
 <p>
-An exponential function has a similar definition except that, for a given $\Delta > 0$, the percentage change of $f$ (instead of the change in $f$) is constant. It is necessary, however, to assume that $f$ is never zero.
-We therefore say that a function $E: \R \rightarrow (0,\infty)$ is <b>exponential</b> if, for $\Delta \ne 0$,
+An exponential function has a similar definition except that, for a given $\Delta > 0$, the percentage change of $f$ (instead of the change in $f$) is proportional to $\Delta$. It is necessary, however, to assume that $f$ is never zero.
+We therefore say that a function $E: \R \rightarrow (0,\infty)$ is <b>exponential</b> if, for any $\Delta \ne 0$, there exists $c(\Delta)\in \R$ such that
 $$
-\frac{E(x+\Delta)}{E(x)}
+\frac{E(x+\Delta)}{E(x)} = c(\Delta),
 $$
-is a constant with respect to $x$ (but depends on $\Delta$).
+for any $x \in \R$. Observe that $c(0) = 1$.
+From this, it follows that, if $E$ is differentiable, then
+\begin{align*}
+\frac{E'(x)}{E(x)} &= \lim_{\Delta\rightarrow 0}\frac{E(x+\Delta)-E(x)}{E(x)\Delta}\\
+      &= E(x)\lim_{\Delta\rightarrow 0}\frac{c(\Delta) - c(0)}{\Delta}.
+\end{align*}
+This implies that $c(\Delta)$, as a function of $\Delta$, is differentiable at $\Delta = 0$, and
+$$
+E'(x) = \kappa E(x),
+$$
+where $\kappa = c'(0)$.
 </p>
 
-The following is proved in the Appendix:
+Conversely, the following is proved in the Appendix:
 
 <div class="theorem">
 Given any $\kappa, e_0 \in \R$, there exists a unique smooth function $E: \R \rightarrow \R$ satisfying
@@ -89,11 +110,11 @@ E' = \kappa E\text{ and }E(0) = e_0.
 </div>
 
 <p>
-One important property of this equation is called <b>translation invariance</b>. This says that if $E: \R \rightarrow \R$ is a solution to \eqref{ode} and $s \in \R$, the function $E_s$ given by
+One important property of this equation is called <b>translation invariance</b>. This says that if $E: \R \rightarrow \R$ is an exponential function, then given any $s \in \R$, the function $E_s: \R \rightarrow (0,\infty)$ given by
 \[
 E_s(t) = E(s+t)
 \]
-satisfies
+is also an exponential function, where
 $$
 E_s' = \kappa E_s\text{ and }E_s(0) = E(s).
 $$
@@ -101,38 +122,76 @@ This property follows by the chain rule and is exploited, both explicitly and im
 </p>
 
 <p>
-We want, however, to restrict to functions that satisfy $E(0)=1$. For each $\kappa \in \R$, let $e_\kappa: \R \rightarrow \R$ denote the unique function that satisfies
-$$ e_\kappa' = \kappa e_\kappa\text{ and }e_\kappa(0) = 1.$$
-It is straightforward, using the theorem above, to show that for any $s, t \in \R$,
-\begin{align*}
-e_\kappa(s+t) &= e_\kappa(s)e_\kappa(t).
+Given any exponential function $E$ such that $E' = \kappa E$, observe that, for any $x \in \R$,
+$$
+E(x) = E(0)e_\kappa(x),
+$$
+where $e_\kappa$ is the exponential function such that $e_\kappa(0) = 1$ and $e_\kappa' = \kappa e_\kappa$.
+It therefore makes sense to focus on the functions $e_\kappa$. Moreover, it is easy to show, using the chain rule, that, for any $t \in \R$,
+\begin{align*}\label{multiplicative-shift}
+e_\kappa(t) = e_1(\kappa t).
 \end{align*}
-This in turn implies that, if we define
+It therefore makes sense to focus on the exponential function $e_1$.
+</p>
+
+<p>
+Using the properties we have found so far of the exponential function $e_\kappa$, it follows that, for any $s, t \in \R$,
+\begin{align*}
+e_\kappa(s+t) &= e_1(s)e_\kappa(t).
+\end{align*}
+This in turn implies that, if we define the (rather important) constant
 $$ e = e_1(1),$$
 then for any rational number $\frac{n}{d}$,
 $$ e_1\left(\frac{n}{d}\right) = e^{\frac{n}{d}}. $$
 These are the exact properties we would expect from an exponential function and justify writing, for any $t \in \R$,
 $$e_1(t) = e^t.$$
+Using this notation with \eqref{multiplicative-shift}, we can also write
+$$
+e_\kappa(t) = e_1(\kappa t) = e^{\kappa t}.
+$$
+</p>
+
+<p>
+In summary, we have shown the following, using the notation defined above:
+</p>
+<p>
+<i>There exists a number $e > 0$ such that any exponential function $E: \R \rightarrow \R$ can be written as
+$$
+E(t) = E_0e^{\kappa t},
+$$
+where $E_0 = E(0)$ and $\kappa = E'(0)/E(0)$.
+</i>
 </p>
 
 ### Exponential of an imaginary number
 
+#### Definition
+
 <p>
-We now turn to the exponential function of a pure imaginary number. The idea is to use an equation like \eqref{ode}. At first sight, this is problematic, because
-$$ e_1(i\theta) $$
-cannot be defined by solving \eqref{ode}, because $t$ would have to be complex. The crucial observation is that, in the real case, the theorem above and the chain rule imply that
-$$ e^{\kappa t} = e_1(\kappa t) = e_\kappa(t). $$
-So the trick is to solve for a function $e_i$ satisfying
+Now suppose you want to extend the definition of $e^t$ to $t \in \C$. Let us focus first on the case $t = i$. One possible approach is defining this is setting
+$$
+e^i = e_1(i).
+$$
+But this is problematic, because it would mean trying to solve \eqref{ode} with $t$ being complex instead of real. A better approach is to use \eqref{ode} as a template and define
+$$
+e^i = e_i(1),
+$$
+where $e_i$ satisfies the equation
 \begin{equation} e_i' = ie_i\text{ and }e_i(0) = 1. \label{ode2} \end{equation}
-It again follows by Theorem A in the appendix that there is a unique solution to \eqref{ode2} and
-that for any $t_1, t_2 \in \R$,
+By Theorem A in the appendix that there is a unique solution $e_i: \R \rightarrow \C$ to \eqref{ode2}. Moreover, for any $t_1, t_2 \in \R$,
 $$ e_i(t_1 + t_2) = e_i(t_1)e_i(t_2), $$
 which justifies writing, for any $t \in \R$,
 $$ e_i(t) = e^{it}. $$
 </p>
 
+#### Geometric properties of the exponential of an imaginary number
+
 <p>
-We now want to understand this function better. If we write $e_i(t) = x(t) + iy(t)$, then \eqref{ode2} is equivalent to the system
+We now want to understand the function $e^{it}$ better. An unexpected twist is that geometry and trigonometry naturally appear in the description of this function.
+</p>
+
+<p>
+If we write $e_i(t) = x(t) + iy(t)$, then \eqref{ode2} is equivalent to the system
 \begin{align}\label{ode3}
 (x',y') &= (-y,x)\text{ and }(x(0),y(0)) = (1,0).
 \end{align}
@@ -167,12 +226,19 @@ The translation invariance of \eqref{ode2} implies that $z$ is in fact periodic,
 $$
 e_i(t + T) = e_i(t).
 $$
-Now define the constant $\pi$ by setting
+</p>
+
+#### Definition of $\pi$
+
+<p>
+We can now define the constant $\pi$ by setting
 $$
 T = 2\pi.
 $$
 Since, for each $t \in [0,2\pi]$, $e_i(t) = (x(t),y(t))$ is point reached by traveling at unit speed along the circle staring from $(1,0)$, it follows that $t$ is the length of the arc from $(1,0)$ to $(x(t),y(t))$. In other words, $t$ is the angle in radians. In particular, the length of the full circle, i.e., its circumference, is $2\pi$.
 </p>
+
+#### Definitions and properties of trig functions
 
 <p>
 We can now define the basic trig functions to be, for any $\theta \in \R$,
@@ -217,7 +283,7 @@ e^{z_1+z_2} = e^{z_1}e^{z_2}
 $$
 and, in particular,
 $$
-e^{x+iy} = e^xe^{iy}.
+e^{x+iy} = e^xe^{iy} = e^x(\cos y + i\sin y)..
 $$
 </p>
 
