@@ -109,6 +109,8 @@ E' = \kappa E\text{ and }E(0) = e_0.
 \end{equation}
 </div>
 
+#### Properties of exponential functions
+
 <p>
 One important property of this equation is called <b>translation invariance</b>. This says that if $E: \R \rightarrow \R$ is an exponential function, then given any $s \in \R$, the function $E_s: \R \rightarrow (0,\infty)$ given by
 \[
@@ -128,9 +130,9 @@ E(x) = E(0)e_\kappa(x),
 $$
 where $e_\kappa$ is the exponential function such that $e_\kappa(0) = 1$ and $e_\kappa' = \kappa e_\kappa$.
 It therefore makes sense to focus on the functions $e_\kappa$. Moreover, it is easy to show, using the chain rule, that, for any $t \in \R$,
-\begin{align*}\label{multiplicative-shift}
+\begin{equation}\label{multiplicative-shift}
 e_\kappa(t) = e_1(\kappa t).
-\end{align*}
+\end{equation}
 It therefore makes sense to focus on the exponential function $e_1$.
 </p>
 
@@ -139,6 +141,11 @@ Using the properties we have found so far of the exponential function $e_\kappa$
 \begin{align*}
 e_\kappa(s+t) &= e_1(s)e_\kappa(t).
 \end{align*}
+</p>
+
+#### Definition of $e$
+
+<p>
 This in turn implies that, if we define the (rather important) constant
 $$ e = e_1(1),$$
 then for any rational number $\frac{n}{d}$,
