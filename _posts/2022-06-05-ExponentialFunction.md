@@ -91,7 +91,7 @@ for any $x \in \R$. Observe that $c(0) = 1$.
 From this, it follows that, if $E$ is differentiable, then
 \begin{align*}
 \frac{E'(x)}{E(x)} &= \lim_{\Delta\rightarrow 0}\frac{E(x+\Delta)-E(x)}{E(x)\Delta}\\
-      &= E(x)\lim_{\Delta\rightarrow 0}\frac{c(\Delta) - c(0)}{\Delta}.
+      &= \lim_{\Delta\rightarrow 0}\frac{c(\Delta) - c(0)}{\Delta}.
 \end{align*}
 This implies that $c(\Delta)$, as a function of $\Delta$, is differentiable at $\Delta = 0$, and
 $$
