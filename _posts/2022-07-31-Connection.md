@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Covariant differentiation on a bundle"
-date:   2022-06-05
+date:   2022-07-31
 categories: blog math vector-bundle principal-bundle connection covariant-differentiation covariant-derivative
 ---
 $\newcommand\R{\mathbb{R}}\newcommand\C{\mathbb{C}}\newcommand\Z{\mathbb{Z}}$
