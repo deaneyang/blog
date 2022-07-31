@@ -42,7 +42,7 @@ $$
 </p>
 
 <p>
-Therefore, given a section of $s$ of a bundle $B$, we want, for each $m \in M$, a linear map
+In other words, given a section of $s: M \rightarrow B$, we want, for each $m \in M$, a linear map
 \begin{align*}
 T_mM &\rightarrow T_{s(m)}F_m\\
 v &\mapsto \nabla_v s(m)
