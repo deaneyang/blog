@@ -19,7 +19,11 @@ $$
 </p>
 
 <p>
-Recall that a section of $B$ is a map $s: M \rightarrow B$ such that $\pi(s(m)) = m$, for any $m \in M$. It should be considered to be a generalization of the graph of a function. In particular, given a map $f: M \rightarrow F$, the graph of $f$, given by
+Recall that a section of $B$ is a map
+$$
+s: M \rightarrow B\text{ such that }\pi(s(m)) = m\text{ for any }m \in M.
+$$
+It should be considered to be the generalization of the graph of a function. In particular, given a map $f: M \rightarrow F$, the graph of $f$, given by
 $$
 s(m) = (m, f(m)),\ m \in M,
 $$
