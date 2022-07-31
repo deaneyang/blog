@@ -129,19 +129,24 @@ $$
 E(x) = E(0)e_\kappa(x),
 $$
 where $e_\kappa$ is the exponential function such that $e_\kappa(0) = 1$ and $e_\kappa' = \kappa e_\kappa$.
-It therefore makes sense to focus on the functions $e_\kappa$. Moreover, it is easy to show, using the chain rule, that, for any $t \in \R$,
+It therefore makes sense to focus on the functions $e_\kappa$.
+</p>
+
+<p>
+Using the properties we have found so far of exponential functions $e_\kappa$, it follows that, for any $s, t \in \R$,
+\begin{align*}
+e_\kappa(s+t) &= e_\kappa(s)e_\kappa(t).
+\end{align*}
+</p>
+
+<p>
+It is also easy to show, using the chain rule, that, for any $t \in \R$,
 \begin{equation}\label{multiplicative-shift}
 e_\kappa(t) = e_1(\kappa t).
 \end{equation}
 It therefore makes sense to focus on the exponential function $e_1$.
 </p>
 
-<p>
-Using the properties we have found so far of the exponential function $e_\kappa$, it follows that, for any $s, t \in \R$,
-\begin{align*}
-e_\kappa(s+t) &= e_1(s)e_\kappa(t).
-\end{align*}
-</p>
 
 #### Definition of $e$
 
@@ -316,7 +321,7 @@ Given $e_0, z \in \C$, there exists a unique differentiable function $e: \R \rig
 </div>
 
 <div class="proof">
-<p> Consider the power series
+<p> First, we show that a solution exists. Consider the power series
 $$
 e(t) = \sum_{k=0} c_kt^k.
 $$
@@ -340,7 +345,7 @@ It is easily checked that by the ratio test for series, the series converges for
 </p>
 
 <p>
-Now suppose $e_1$ and $e_2$ are both solutions to \eqref{ivp}. Then the function $f = e_2-e_1$ satisfies
+Now suppose $e_1$ and $e_2$ are differentiable functions that are both solutions to \eqref{ivp}. Then the function $f = e_2-e_1$ satisfies
 \begin{equation}\label{ivpz}
   f' = zf\text{ and }f(0) = 0.
 \end{equation}
