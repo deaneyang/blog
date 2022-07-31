@@ -24,7 +24,7 @@ Recall that a section of $B$ is a map
 $$
 s: M \rightarrow B
 $$
-such that $\pi(s(m)) = m$ for any $m \in M$.
+such that for each $m \in M$,  $s(m) \in F_m$.
 It should be considered to be the generalization of the graph of a function. In particular, given a manifold $F$ and a map $f: M \rightarrow F$, the graph of $f$, given by
 $$
 s(m) = (m, f(m)),\ m \in M,
