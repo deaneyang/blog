@@ -12,10 +12,11 @@ Details to come, but here is the brief version.
 </p>
 
 <p>
-Let $M$ be a smooth manifold and $B$ be a bundle over $M$. This implies that there is a projection map $\pi: B \rightarrow M$ that is a submersion and there exists a manifold $F$, called the fiber, such that for each $m \in M$, $\pi^{-1}(m)$ is diffeomorphic to $F$. The implicit function theorem shows that this is equivalent to the standard definition of a bundle. For each $m \in M$, we denote the fiber over $m$ by
+Let $M$ be a smooth manifold and $B$ be a bundle over $M$. This implies that there is a projection map $\pi: B \rightarrow M$ that is a submersion. For each $m \in M$,
 $$
-F_m = \pi^{-1}(m).
+F_m = \pi^{-1}(m)
 $$
+is called the fiber over $m$.
 </p>
 
 <p>
@@ -24,7 +25,7 @@ $$
 s: M \rightarrow B
 $$
 such that $\pi(s(m)) = m$ for any $m \in M$.
-It should be considered to be the generalization of the graph of a function. In particular, given a map $f: M \rightarrow F$, the graph of $f$, given by
+It should be considered to be the generalization of the graph of a function. In particular, given a manifold $F$ and a map $f: M \rightarrow F$, the graph of $f$, given by
 $$
 s(m) = (m, f(m)),\ m \in M,
 $$
