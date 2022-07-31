@@ -21,8 +21,9 @@ $$
 <p>
 Recall that a section of $B$ is a map
 $$
-s: M \rightarrow B\text{ such that }\pi(s(m)) = m\text{ for any }m \in M.
+s: M \rightarrow B
 $$
+such that $\pi(s(m)) = m$ for any $m \in M$.
 It should be considered to be the generalization of the graph of a function. In particular, given a map $f: M \rightarrow F$, the graph of $f$, given by
 $$
 s(m) = (m, f(m)),\ m \in M,
@@ -39,14 +40,19 @@ There in fact is already a natural way to differentiate a section. Its different
 $$
 s_*: T_mM \rightarrow T_s(m)B.
 $$
-When $B = M\times F$, then a section is always the graph of a map $f: M \rightarrow F$. The covariant derivative of $s$ is a generalization of the linear map
+When $B = M\times F$, then the guiding example of a covariant derivative is the differential
 $$
 f_*: T_mM \rightarrow T_{f(m)}F.
 $$
+It is important to note that $f_*$ is linear and is the composition of two linear maps,
+$$
+f_* = \Pi_f\circ s_*,
+$$
+where $\Pi_m: T_f(M\times F) \rightarrow T_fF$ is the vertical projection map.
 </p>
 
 <p>
-In other words, given a section of $s: M \rightarrow B$, we want, for each $m \in M$, a linear map
+Given a section of $s: M \rightarrow B$, we want the covariant derivative of $s$ to be, for each $m \in M$, a linear map
 \begin{align*}
 T_mM &\rightarrow T_{s(m)}F_m\\
 v &\mapsto \nabla_v s(m)
