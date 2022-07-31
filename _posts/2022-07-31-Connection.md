@@ -12,7 +12,7 @@ Details to come, but here is the brief version.
 </p>
 
 <p>
-Let $M$ be a smooth manifold and $B$ be a bundle over $M$. This means that there is a projection map $\pi: B \rightarrow M$ that is a submersion and there exists a manifold $F$, called the fiber, such that for each $m \in M$, $\pi^{-1}(m)$ is diffeomorphic to $F$. The implicit function theorem shows that this is equivalent to the standard definition of a bundle. For each $m \in M$, we denote the fiber over $m$ by
+Let $M$ be a smooth manifold and $B$ be a bundle over $M$. This implies that there is a projection map $\pi: B \rightarrow M$ that is a submersion and there exists a manifold $F$, called the fiber, such that for each $m \in M$, $\pi^{-1}(m)$ is diffeomorphic to $F$. The implicit function theorem shows that this is equivalent to the standard definition of a bundle. For each $m \in M$, we denote the fiber over $m$ by
 $$
 F_m = \pi^{-1}(m).
 $$
