@@ -12,7 +12,10 @@ Details to come, but here is the brief version.
 </p>
 
 <p>
-Let $M$ be a smooth manifold and $B$ be a bundle over $M$. This means that there is a projection map $\pi: B \rightarrow M$ that is a submersion and there exists a manifold $F$, called the fiber, such that for each $m \in M$, $\pi^{-1}(m)$ is diffeomorphic to $F$. The implicit function theorem shows that this is equivalent to the standard definition of a bundle.
+Let $M$ be a smooth manifold and $B$ be a bundle over $M$. This means that there is a projection map $\pi: B \rightarrow M$ that is a submersion and there exists a manifold $F$, called the fiber, such that for each $m \in M$, $\pi^{-1}(m)$ is diffeomorphic to $F$. The implicit function theorem shows that this is equivalent to the standard definition of a bundle. For each $m \in M$, we denote the fiber over $m$ by
+$$
+F_m = \pi^{-1}(m).
+$$
 </p>
 
 <p>
@@ -28,29 +31,34 @@ A <em>connection</em> is a way to differentiate a section of a bundle. It is als
 </p>
 
 <p>
-There in fact is already a natural way to differentiate a section. Its differential, Jacobian, or pushforward defines a map
+There in fact is already a natural way to differentiate a section. Its differential, Jacobian, or pushforward defines for each $m \in M$, a linear map
 $$
-s_*: T_*M \rightarrow T_*B.
+s_*: T_mM \rightarrow T_s(m)B.
 $$
-The covariant derivative of $s$ is a generalization of the differential
+When $B = M\times F$, then a section is always the graph of a map $f: M \rightarrow F$. The covariant derivative of $s$ is a generalization of the linear map
 $$
-f_*: T_*M \rightarrow T_*F
+f_*: T_mM \rightarrow T_{f(m)}F.
 $$
-for the trivial bundle.
 </p>
 
-In other words, we want, for each $m \in M$, a map
-$$
-\nabla s(m): T_mM \rightarrow T_{s(m)}F_m,
-$$
-where $F_m = \pi^{-1}(m)$, that depends only on first derivatives of $s$. The most obvious way to do this is to choose, for each $m \in M$ and $f \in F_m$, a linear projection map
-$$
+<p>
+Therefore, given a section of $s$ of a bundle $B$, we want, for each $m \in M$, a linear map
+\begin{align*}
+T_mM &\rightarrow T_{s(m)}F_m\\
+v &\mapsto \nabla_v s(m)
+\end{align*}
+that depends only on first derivatives of $s$.
+</p>
+
+<p>
+An obvious way to do this is to choose, for each $m \in M$ and $f \in F_m$, a linear projection map$$
 \Pi_f: T_fB \rightarrow T_fF_m,
 $$
 and, given a section $s$ and $v \in T_mM$,
 $$
 \nabla_vs(m) = \Pi_{s(m)}s_*v.
 $$
+</p>
 
 <p>
 If the bundle is either a vector or principal bundle, then we want the covariant derivative to satisfy an additional condition, namely that it be a derivation.
