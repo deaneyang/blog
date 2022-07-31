@@ -37,7 +37,7 @@ A <em>connection</em> is a way to differentiate a section of a bundle. It is als
 </p>
 
 <p>
-There in fact is already a natural way to differentiate a section. Its differential, Jacobian, or pushforward defines for each $m \in M$, a linear map
+There is already a natural way to differentiate a section. Its differential, Jacobian, or pushforward defines for each $m \in M$, a linear map
 $$
 s_*: T_mM \rightarrow T_{s(m)}B.
 $$
