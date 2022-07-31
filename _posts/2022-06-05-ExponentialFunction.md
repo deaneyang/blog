@@ -55,7 +55,7 @@ This is simple and elegant, but the proof provides little intuition to what is g
 </p>
 
 <p>
-Below is an alternative approach that I think elucidates how the exponential function of both real and imaginary numbers arise and why exponential of an imaginary number has a geometric interpretation. The explanation below requires only basic calculus. A rigorous discussion requires the basics of when a power series converges.
+Below is an alternative approach that I think elucidates how the exponential function of both real and imaginary numbers arise and why exponential of an imaginary number has a geometric interpretation. The explanation below requires only basic calculus. No knowledge of differential equations is needed. The appendix provides a rigorous discussion showing how to use power series to solve a simple ordinary differential equation. The uniqueness of the solution follows from basic properties of the integral.
 </p>
 
 ### Exponential function of a real number
