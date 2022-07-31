@@ -38,7 +38,7 @@ A <em>connection</em> is a way to differentiate a section of a bundle. It is als
 <p>
 There in fact is already a natural way to differentiate a section. Its differential, Jacobian, or pushforward defines for each $m \in M$, a linear map
 $$
-s_*: T_mM \rightarrow T_s(m)B.
+s_*: T_mM \rightarrow T_{s(m)}B.
 $$
 When $B = M\times F$, then the guiding example of a covariant derivative is the differential
 $$
