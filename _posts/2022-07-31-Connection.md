@@ -37,30 +37,12 @@ A <em>connection</em> is a way to differentiate a section of a bundle. It is als
 </p>
 
 <p>
-There is already a natural way to differentiate a section. Its differential, Jacobian, or pushforward defines for each $m \in M$, a linear map
-\begin{align*}
-T_mM &\rightarrow T_{s(m)}B\\
-v &\mapsto D_vs(m).
-\end{align*}
-When $B = M\times F$, the guiding example of a covariant derivative is the differential
+The guiding example of a connection is for the trivial bundle $B = M\times F$, where we can define the covariant derivative of a section $s$ to be the differential
 \begin{align*}
 T_mM &\rightarrow T_{f(m)}F\\
 v &\mapsto D_vf(m).
 \end{align*}
-It is important to note that this map and is the composition of two linear maps,
-$$
-Df = \Pi_{(m,f)}\circ Ds,
-$$
-where
-\begin{align*}
-\Pi_{(m,f)}: T_{(m,f)}(M\times F) &\rightarrow T_fF\\
-(v,\dot{f}) &\mapsto \dot{f}
-\end{align*}
-is the vertical projection map.
-</p>
-
-<p>
-Given a section of $s: M \rightarrow B$, we want the covariant derivative of $s$ to be, for each $m \in M$, a linear map
+We would like to extend this to an arbitrary bundle and define the covariant derivative of a section of $s: M \rightarrow B$ to be, for each $m \in M$, a linear map
 \begin{align*}
 T_mM &\rightarrow T_{s(m)}F_m\\
 v &\mapsto \nabla_v s(m)
@@ -69,13 +51,40 @@ that depends only on first derivatives of $s$.
 </p>
 
 <p>
-An obvious way to do this is to choose, for each $m \in M$ and $f \in F_m$, a linear projection map$$
+We could do this by using a local trivialization of of $B$ to represent a section $s$ as the graph of a map $f$. The covariant derivative of $s$ could then be defined to be the differential of $f$, as we did for the trivial bundle. However, this definition depends on the local trivialization used, and we want something that is independent of local trivializations.
+</p>
+
+<p>
+There is already a natural way to differentiate a section, namely its differential (also known as its Jacobian or pushforward), which defines for each $m \in M$, a linear map
+\begin{align*}
+T_mM &\rightarrow T_{s(m)}B\\
+v &\mapsto D_vs(m).
+\end{align*}
+This is not quite what we want.
+</p>
+
+<p>
+Moreover, for the trivial bundle $B = M\times F$, the differential of $f$ is the composition of a projection map and the differential of $s$,
+$$
+D_vf(m) = \Pi_{(m,f(m))}\circ Ds,
+$$
+where
+\begin{align*}
+\Pi_{(m,f)}: T_{(m,f)}(M\times F) &\rightarrow T_fF\\
+(v,\dot{f}) &\mapsto \dot{f}
+\end{align*}
+projects the tangent space of $M\times F$ onto the tangent space of $F$. This leads to the following definition of a covariant derivative.
+</p>
+
+<p>
+We can choose, for each $m \in M$ and $f \in F_m$, a linear projection map$$
 \Pi_f: T_fB \rightarrow T_fF_m,
 $$
-and, given a section $s$ and $v \in T_mM$,
+and define the covariant derivative of a section $s$ in the direction $v \in T_mM$ by
 $$
 \nabla_vs(m) = \Pi_{s(m)}(D_vs(m)).
 $$
+Note that the connection depends on the projection maps chosen and therefore is not uniquely determined by the bundle itself.
 </p>
 
 <p>
