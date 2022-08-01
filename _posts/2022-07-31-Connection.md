@@ -38,18 +38,25 @@ A <em>connection</em> is a way to differentiate a section of a bundle. It is als
 
 <p>
 There is already a natural way to differentiate a section. Its differential, Jacobian, or pushforward defines for each $m \in M$, a linear map
+\begin{align*}
+T_mM &\rightarrow T_{s(m)}B\\
+v &\mapsto D_vs(m).
+\end{align*}
+When $B = M\times F$, the guiding example of a covariant derivative is the differential
+\begin{align*}
+T_mM &\rightarrow T_{f(m)}F\\
+v &\mapsto D_vf(m).
+\end{align*}
+It is important to note that this map and is the composition of two linear maps,
 $$
-s_*: T_mM \rightarrow T_{s(m)}B.
+Df = \Pi_{(m,f)}\circ Ds,
 $$
-When $B = M\times F$, then the guiding example of a covariant derivative is the differential
-$$
-f_*: T_mM \rightarrow T_{f(m)}F.
-$$
-It is important to note that $f_*$ is linear and is the composition of two linear maps,
-$$
-f_* = \Pi_f\circ s_*,
-$$
-where $\Pi_m: T_f(M\times F) \rightarrow T_fF$ is the vertical projection map.
+where
+\begin{align*}
+\Pi_{(m,f)}: T_{(m,f)}(M\times F) &\rightarrow T_fF\\
+(v,\dot{f}) &\mapsto \dot{f}
+\end{align*}
+is the vertical projection map.
 </p>
 
 <p>
@@ -67,7 +74,7 @@ An obvious way to do this is to choose, for each $m \in M$ and $f \in F_m$, a li
 $$
 and, given a section $s$ and $v \in T_mM$,
 $$
-\nabla_vs(m) = \Pi_{s(m)}s_*v.
+\nabla_vs(m) = \Pi_{s(m)}(D_vs(m)).
 $$
 </p>
 
