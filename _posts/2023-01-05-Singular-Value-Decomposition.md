@@ -15,7 +15,7 @@ We start with a geometric description of a singular value decomposition of $L$. 
 <ul>
 <li>$(v_{r+1}, \dots, r_m)$ is a basis of $\ker(L)$</li>
 <li>$(u_{r+1}, \dots, u_n)$ is a basis of $(\operatorname{image}(L))^\perp$</li>
-<li>$L(v_j) = \lambda_ju_j$ for each $1 \le j \le r$
+<li>$L(v_j) = \lambda_ju_j$ for each $1 \le j \le r$</li>
 </ul>
 </p>
 
@@ -49,7 +49,7 @@ and if $r+1 \le j \le m$, then
 
 The distinct values of $\lambda_1, \dots, \lambda_r$ are called the **singular values** of the map $L$.
 
-A singular value decomposition of $L: M \rightarrow N$ can be constructed as follows:
+A singular value decomposition of any linear map $L: M \rightarrow N$ can be constructed as follows:
 
 The linear map $L^*L$ is nonnegative-definite and self-adjoint and therefore has  nonnegative real eigenvalues $\lambda_1^2, \dots, \lambda_m^2$. We can assume that $\lambda_1, \dots, \lambda_r > 0$ and $\lambda_{r+1}, \dots, \lambda_m = 0$. Let $s_1, \dots, s_k$ be the distinct values of $\lambda_1, \dots, \lambda_r$.
 
