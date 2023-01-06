@@ -96,7 +96,7 @@ If we now define $V: \R^m \rightarrow M$ and $U: \R^n \rightarrow N$ such that
 \begin{align*}
 V(e_j) &= v_j,\ 1 \le j \le m\\
 U(e_a) &= u_a,\ 1 \le a \le n,
-$$
+\end{align*}
 then they satisfy the second definition of a singular value decomposition.
 </p>
 
