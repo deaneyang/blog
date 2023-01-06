@@ -17,6 +17,7 @@ We start with a geometric description of a singular value decomposition of $L$. 
 <li>$(u_{r+1}, \dots, u_n)$ is a basis of $(\operatorname{image}(L))^\perp$</li>
 <li>$L(v_j) = \lambda_ju_j$ for each $1 \le j \le r$</li>
 </ul>
+The distinct values of $\lambda_1, \dots, \lambda_r$ are called the **singular values** of the map $L$.
 </p>
 
 <p>
@@ -46,8 +47,6 @@ and if $r+1 \le j \le m$, then
   &= 0.
 \end{align*}
 </p>
-
-The distinct values of $\lambda_1, \dots, \lambda_r$ are called the **singular values** of the map $L$.
 
 A singular value decomposition of any linear map $L: M \rightarrow N$ can be constructed as follows:
 
