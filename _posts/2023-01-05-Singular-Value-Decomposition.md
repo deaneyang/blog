@@ -25,9 +25,9 @@ Equivalently, a <b>singular value decomposition</b> of $L$ is
 $$
 L = U\Sigma V^*,
 $$
-where $V; \R^m \rightarrow M$ and $U: \R^n\rightarrow N$ are isometries and $\Sigma$ is a diagonal $n$-by-$m$ matrix, which means that for each $1 \le k \le m$ and $1 \le a \le n$,
+where $V; \R^m \rightarrow M$ and $U: \R^n\rightarrow N$ are isometries and $\Sigma$ is a diagonal $n$-by-$m$ matrix such that
 \begin{align*}
-  \Sigma_j^j &\lambda_j 0\text{ if }1 \le j \le r\\
+  \Sigma_j^j &= \lambda_j \text{ if }1 \le j \le r\\
   \Sigma_j^a &= 0\text{ otherwise}.
 \end{align*}
 </p>
