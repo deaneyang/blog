@@ -58,7 +58,7 @@ $$
   r = d_1 + \cdots + d_k
 $$
 is the rank of $L$. 
-We can assume that
+Given an ordering of the singular values, we can assume that the ordering of $\lambda_1, \dots, \lambda_m$ is given by
 \begin{align*}
 \lambda_{d_1+\cdots+d_{j-1}+1}=\cdots=\lambda_{d_1+\cdots+d_{j-1}+d_j}&= s_j\text{ for each }1 \le j \le r\\
 \lambda_{r+1} = \cdots \lambda_m &= 0.
@@ -100,6 +100,6 @@ $$
 then they satisfy the second definition of a singular value decomposition.
 </p>
 
-A natural question is to what extent are $U$ and $V^*$ unique. If we fix an ordering of the singular values $s_1, \dots, s_k$ and the corresponding ordering of $\lambda_1, \dots, \lambda_r$, as specified above, then it is easy to see that $V$ is unique up to rotations in each eigenspace of $L^tL$ and, given $V$, $U$ is unique up to rotations of $(\operatorname{image}(L))^\perp$.
+A natural question is to what extent are $U$ and $V^*$ unique. It is clear from the above construction that if we fix an ordering of the singular values $s_1, \dots, s_k$ and the corresponding ordering of $\lambda_1, \dots, \lambda_r$, as specified above, then $V$ is unique up to rotations in each eigenspace of $L^tL$ and, given $V$, $U$ is unique up to rotations of $(\operatorname{image}(L))^\perp$.
 
 
