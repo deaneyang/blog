@@ -4,15 +4,15 @@ title:  "Exponential functions and Euler's formula"
 date:   2022-06-05
 categories: blog math exponential-function euler-formula
 ---
-$\newcommand\R{\mathbb{R}}\newcommand\C{\mathbb{C}}\newcommand\Z{\mathbb{Z}}$
+$\newcommand\R{\mathbb{R}}\newcommand\C{\mathbb{C}}\newcommand\Z{\mathbb{Z}}\newcommand\Q{\mathbb{Q}}$
 
 
 <p>
-Most of this post is identical to an older post. Both posts were driven by a desire to explain and prove Eulder's formula,
+This post was driven by a desire to explain  and prove Eulder's formula,
 \begin{equation}\label{euler}
 e^{i\theta} = \cos\theta + i\sin \theta,
 \end{equation}
-in a more conceptual way than the proof using power series. In the original post, I tried to avoid power series completely. This post has the same conceptual explanation of Euler's formula but uses power series as the key technical tool in the rigorous proofs.
+in a more conceptual way than the standard explanation using power series. Power series are still used as the key technical tool for proving the existence and uniqueness of exponential functions.
 </p>
 
 <p><b>Acknowledgements.</b> <i>This was provoked by a <a href="https://www.quantamagazine.org/how-infinite-series-reveal-the-unity-of-mathematics-20220124/">Quanta Magazine article by Steven Strogatz on how to prove Euler's formula using power series.</a> The discussion below was inspired by Michael Hutchings' observation that Euler's formula can be proved by solving an ordinary differential equation.</i> I'd also like to thank Dan Lee, Keith Conrad, and my other Facebook friends for their comments and corrections.</p>
@@ -28,7 +28,7 @@ Here, I provide an alternative approach that I find that is easier to understand
 </p>
 
 <p>
-The exposition here does not require the use of power series. Power series are needed only for rigorous proofs of what is stated.
+The exposition here does not require the use of power series. Power series are needed only for the rigorous proof of the existence and uniqueness theorem of exponential functions
 </p>
 
 ### Power series proof of Euler's formula
@@ -65,43 +65,43 @@ We start by postulating what we mean by an exponential function.
 #### Linear function
 
 <p>
-First, recall that a function $f: \R \rightarrow \R$ is <b>linear</b> if, for any $\Delta \ne 0$, the change in $f$
+We start by with the definition of a linear function. A function $f: \R \rightarrow \R$ is <b>linear</b> if the change in output depends only on the change in input and not on the input itself. More precisely, for any change in input, $\Delta \ne 0$, there exists $c(\Delta) \in \R$ such that
 $$
-f(x+\Delta) - f(x)
+f(x+\Delta) - f(x) = c(\Delta),\ \forall x \in \R
 $$
-is independent of $x$ and proportional to $\Delta$. In other words, there exists a constant $c \in \R$ such that for any $x, \Delta \in \R$,
-$$
-f(x+\Delta) - f(x) = c\Delta.
-$$
-If $f$ is assumed to be differentiable, then, by taking the limit $\Delta \rightarrow 0$, then
-$$
-f'(x) = \lim_{\Delta\rightarrow 0} \frac{f(x+\Delta)-f(x)}{\Delta} = c.
-$$
+Observe that $c(0) = 0$. Therefore, if $f$ is assumed to be differentiable, then
+\begin{align*}
+f'(x) &= \lim_{\Delta\rightarrow 0} \frac{f(x+\Delta)-f(x)}{\Delta}\\
+&= \lim_{\Delta\rightarrow 0} \frac{c(\Delta)-c(0)}{\Delta}\\
+&= c'(0),
+\end{align*}
+which is a constant. If we set $m = c'(0)$ and $b = f(0)$, this implies that if $f$ is linear, then
+$$ f(x) = mx + b. $$
+The converse also holds.
 </p>
 
-#### Exponential function
+#### Exponential functions
 
 <p>
-An exponential function has a similar definition except that, for a given $\Delta > 0$, the percentage change of $f$ (instead of the change in $f$) is proportional to $\Delta$. It is necessary, however, to assume that $f$ is never zero.
-We therefore say that a function $E: \R \rightarrow (0,\infty)$ is <b>exponential</b> if, for any $\Delta \ne 0$, there exists $c(\Delta)\in \R$ such that
-$$
-\frac{E(x+\Delta)}{E(x)} = c(\Delta),
-$$
-for any $x \in \R$. Observe that $c(0) = 1$.
+An exponential function has a similar definition except that change in output is replaced by relative change in input. In other words, a function $E: \R \rightarrow \R$ is <b>exponential</b> if the <b>percentage or relative change</b> of $E$ depends only on the change in input and not on the input itself. More precisely, for any $\Delta \in \R$, there exists $C(\Delta)$ such that
+\begin{equation}\label{relative-change}
+\frac{E(x+\Delta)-E(x)}{E(x)} = C(\Delta).
+\end{equation}
+Observe that $c(0) = 0$.
 From this, it follows that, if $E$ is differentiable, then
 \begin{align*}
 \frac{E'(x)}{E(x)} &= \lim_{\Delta\rightarrow 0}\frac{E(x+\Delta)-E(x)}{E(x)\Delta}\\
-      &= \lim_{\Delta\rightarrow 0}\frac{c(\Delta) - c(0)}{\Delta}.
+      &= \lim_{\Delta\rightarrow 0}\frac{C(\Delta)-C(0)}{\Delta}\\
+      &= C'(0)
 \end{align*}
-This implies that $c(\Delta)$, as a function of $\Delta$, is differentiable at $\Delta = 0$, and
+This implies that $C(\Delta)$, as a function of $\Delta$, is differentiable at $\Delta = 0$, and
 $$
 E'(x) = \kappa E(x),
 $$
-where $\kappa = c'(0)$.
+where $\kappa = c'(0)$ is a constant.
 </p>
 
-Conversely, the following is proved in the Appendix:
-
+The following holds:
 <div class="theorem">
 Given any $\kappa, e_0 \in \R$, there exists a unique differentiable function $E: \R \rightarrow \R$ satisfying
 \begin{equation}\label{ode}
@@ -109,70 +109,120 @@ E' = \kappa E\text{ and }E(0) = e_0.
 \end{equation}
 </div>
 
-#### Properties of exponential functions
+The proof of existence is given in the Appendix. The proof of uniqueness is below.
 
-<p>
-One important property of this equation is called <b>translation invariance</b>. This says that if $E: \R \rightarrow \R$ is an exponential function, then given any $s \in \R$, the function $E_s: \R \rightarrow (0,\infty)$ given by
-\[
-E_s(t) = E(s+t)
-\]
-is also an exponential function, where
-$$
-E_s' = \kappa E_s\text{ and }E_s(0) = E(s).
-$$
-This property follows by the chain rule and is exploited, both explicitly and implicitly, extensively below.
-</p>
-
-<p>
-Given any exponential function $E$ such that $E' = \kappa E$, observe that, for any $x \in \R$,
-$$
-E(x) = E(0)e_\kappa(x),
-$$
-where $e_\kappa$ is the exponential function such that $e_\kappa(0) = 1$ and $e_\kappa' = \kappa e_\kappa$.
-It therefore makes sense to focus on the functions $e_\kappa$.
-</p>
-
-<p>
-Using the properties we have found so far of exponential functions $e_\kappa$, it follows that, for any $s, t \in \R$,
-\begin{align*}
-e_\kappa(s+t) &= e_\kappa(s)e_\kappa(t).
-\end{align*}
-</p>
-
-<p>
-It is also easy to show, using the chain rule, that, for any $t \in \R$,
-\begin{equation}\label{multiplicative-shift}
-e_\kappa(t) = e_1(\kappa t).
+Given $\kappa \in \R$, let $e_\kappa$ denote the unique function such that
+\begin{equation}
+e_\kappa' = \kappa e_\kappa\text{ and }e_\kappa(0) = 1
 \end{equation}
-It therefore makes sense to focus on the exponential function $e_1$.
-</p>
+The function $e_1$ will be called the <b>standard exponential function</b>.
 
-
-#### Definition of $e$
-
-<p>
-This in turn implies that, if we define the (rather important) constant
-$$ e = e_1(1),$$
-then for any rational number $\frac{n}{d}$,
-$$ e_1\left(\frac{n}{d}\right) = e^{\frac{n}{d}}. $$
-These are the exact properties we would expect from an exponential function and justify writing, for any $t \in \R$,
-$$e_1(t) = e^t.$$
-Using this notation with \eqref{multiplicative-shift}, we can also write
+<p>Observe that if $E$ satisfies \eqref{ode}, then by the uniqueness statement of the theorem and the chain rule,
 $$
-e_\kappa(t) = e_1(\kappa t) = e^{\kappa t}.
+E(x) = e_0e_1(\kappa x),\ \forall x \in \R.
+$$
+In particular,
+$$
+e_\kappa(x) = e_1(\kappa x),\ \forall x \in \R.
 $$
 </p>
 
+#### Uniqueness of exponential functions
+
 <p>
-In summary, we have shown the following, using the notation defined above:
+Also proved in the Appendix is that if $e_0$ and $\kappa$ are positive, then the function $E$ given by \eqref{ode} is positive and strictly increasing. This proves uniqueness of $E$ by the following argument.
 </p>
+
 <p>
-<i>There exists a number $e > 0$ such that any exponential function $E: \R \rightarrow \R$ can be written as
+Let $E_1$ and $E_2$ both satisfy \eqref{ode}. It follows by the quotient rule for differentiation that
 $$
-E(t) = E_0e^{\kappa t},
+\left(\frac{E_1}{E_2}\right)' = \frac{E_2E_1'-E_1E_2'}{E_2^2} = \frac{E_1}{E_2}\left(\frac{E_1'}{E_1}-\frac{E_2'}{E_2}\right) = \kappa - \kappa = 0.
 $$
-where $E_0 = E(0)$ and $\kappa = E'(0)/E(0)$.
-</i>
+Since $E_1(0) = E_2(0)$, it follows that $E_1 = E_2$.
+</p>
+
+#### Translation invariance
+
+<p>
+The most important property of the function is called <b>translation invariance</b>, which says that for any $\kappa \ne 0$,
+$$
+e_\kappa(s+t) = e_\kappa(s)e_\kappa(t),\ \forall s, t \in \R.
+$$
+This follows from the fact that if $s$ is held fixed, each side defines a function that satisfies
+$$
+E_s'(t) = \kappa E_s(t)\text{ and }E_s(0) = e_\kappa(s).
+$$
+</p>
+
+#### Relative Change in Output of an Exponential Function
+
+<p>
+For any function $E$ satisfying \eqref{ode} and any $x, \Delta \in \R$,
+\begin{align*}
+E(x+\Delta)-E(x) &= e_0e_\kappa(x+\Delta) - e_0e_\kappa(x)\\
+&= e_0(e_\kappa(x)e_\kappa(\Delta) - e_\kappa(x))\\
+&= e_0e_\kappa(x)(e_\kappa(\Delta) - 1)\\
+&= E(x)c(\Delta),
+\end{align*}
+where
+$$ c(\Delta) = e_\kappa(\Delta) - 1. $$
+From this, it follows that a differentiable function $E$ satisfies \eqref{relative-change} if and only if it satisfies \eqref{ode}.
+</p>
+
+#### Euler's constant $e$
+
+We define Euler's constant to be
+$$ e = e_1(1).$$
+
+<p>
+By translation invariance, it follows that for any nonnegative $k \in \Z$,
+$$ e_1(k+1) = e_1(k). $$
+By induction and that $e_1(0)=0$, it follows that
+$$ e_1(k) = e^k. $$
+Also, since
+$$ 1 = e_1(0) = e_1(k+(-k)) = e_1(k)e_(-k), $$
+it follows that for any positive integer $k$,
+$$ e_1(-k) = e^{-k}. $$
+Therefore, for any $k \in \Z$,
+$$ e_1(k) = e^k. $$
+</p>
+
+<p>
+For any rational number $\frac{n}{d}$, where $n \in \Z$ and $d \in \Z_+$,
+\begin{align*}
+e^n &= e_1(n)\\  &= e_1\left(\frac{n}{d}+\cdots+\frac{n}{d}\right)\\
+&= \left(e_1\left(\frac{n}{d}\right)\right)^d
+\end{align*}
+It follows that
+\begin{align*}
+e_1\left(\frac{n}{d}\right) &= (e^n)^{\frac{1}{d}} = e^{\frac{n}{d}}.
+\end{align*}
+In short, for any $r \in \Q$,
+$$
+e_1(r) = e^r.
+$$
+</p>
+
+<p>
+These properties justify the following definition: For any $x \in \R$, we denote the standard exponential function by
+$$
+e^x = e_1(x),
+$$
+which satisfies
+\begin{align*}
+e^x &> 0,\ \forall x \in \R\\
+e^0 &= 1\\
+e^{x+y} &= e^xe^y,\ \forall x,y \in \R.
+\end{align*}
+Note that if $x$ is irrational, this is the <b>definition</b> of $e^x$.
+</p>
+
+<p>
+Moreover, any exponential function $E: \R \rightarrow \R$ can be written as
+$$
+E(t) = e_0e^{\kappa t},
+$$
+where $e_0$ and $\kappa = E'(0)/E(0)$ are constants.
 </p>
 
 ### Exponential of an imaginary number
@@ -230,24 +280,36 @@ Putting this all together, we see that the solution is a unit speed parameteriza
 </p>
 
 <p>
-Since the parameterization has unit speed, it is intuitively clear that the solution to \eqref{ode3} goes around the entire circle. In particular, there exists $T > 0$ such that
+Since the parameterization has unit speed, it is intuitively clear that, as $t$ increases, the solution $(x(t),y(t))$ to \eqref{ode3} goes around the entire circle at least one. In particular, there exists $T > 0$ such that
 $$
 e_i(T) = e_i(0).
 $$
-The translation invariance of \eqref{ode2} implies that $z$ is in fact periodic, which means that, for any $t \in \R$,
+The translation invariance of \eqref{ode2} implies
 $$
 e_i(t + T) = e_i(t).
 $$
+A function with this property is called periodic.
 </p>
 
 #### Definition of $\pi$
 
 <p>
-We can now define the constant $\pi$ by setting
+If $T$ is the smallest positive constant such that
+$$ e^{iT} = 1, $$
+the constant $\pi$ is defined to be
 $$
-T = 2\pi.
+\pi = \frac{1}{T}.
 $$
-Since, for each $t \in [0,2\pi]$, $e_i(t) = (x(t),y(t))$ is point reached by traveling at unit speed along the circle staring from $(1,0)$, it follows that $t$ is the length of the arc from $(1,0)$ to $(x(t),y(t))$. In other words, $t$ is the angle in radians. In particular, the length of the full circle, i.e., its circumference, is $2\pi$.
+Since, for each $t \in [0,2\pi]$,
+$$ e_i(t) = (x(t),y(t)) $$
+is the point reached by traveling at unit speed along the circle staring from $(1,0)$, we can define the length of the arc from $(1,0)$ to $(x(t),y(t))$, where $0 \le t < 2\pi$, to be $t$. In particular, the circumference of the circle, which is defined to be the length of the full circle is $2\pi$.
+</p>
+
+<p>
+The angle in radians from $(1,0)$ to the point $(x,y)$ on the unit circle is defined to be the unique $t \in [0,2\pi)$ such that
+$$
+e^{it} = x + iy.
+$$
 </p>
 
 #### Definitions and properties of trig functions
@@ -256,9 +318,21 @@ Since, for each $t \in [0,2\pi]$, $e_i(t) = (x(t),y(t))$ is point reached by tra
 We can now define the basic trig functions to be, for any $\theta \in \R$,
 \begin{align*}
 \cos\theta &= x(\theta)\\
-\sin\theta &= y(\theta).
+\sin\theta &= y(\theta),
 \end{align*}
-Direct consequences of everything above include
+where
+$$
+e^{i\theta} = x(\theta) + iy(\theta).
+$$
+In other words,
+$$
+e^{i\theta} = \cos\theta + i\sin\theta.
+$$
+Euler's formula is therefore the <b>definition</b> of the sine and cosine functions.
+</p>
+
+<p>
+Straightforward consequences of everything above include
 $$ (\sin\theta)^2 + (\cos\theta)^2 = 1, $$
 Euler's formula
 $$ e^{i\theta} = \cos\theta + i\sin\theta, $$
@@ -280,7 +354,7 @@ where $n$ is any integer.
 Many trigonometric identities also follow easily by raising $e^{i\theta}$ to integer and rational powers.
 </p>
 
-### Exponential of a complex number
+#### Exponential of a complex number
 
 <p>
 Finally, it is now obvious how to define the exponential of a complex number $z$, namely
@@ -304,7 +378,8 @@ $$
 We have succeeded in using only calculus to obtain the following in a natural and intuitive way:
 <ul>
 <li>Definitions of the constants $e$ and $\pi$</li>
-<li>Definitions and fundamental properties of the functions $e^z$, $\sin\theta$, $\cos\theta$</li>
+<li>Definitions and fundamental properties of the exponential functions $e^z$ for any $z \in \C$</li>
+<li>Definitions of the trigonometric functions $\sin\theta$ and $\cos\theta$</li>
 <li>Euler's formula</li>
 </ul>
 </p>
@@ -314,93 +389,63 @@ We have succeeded in using only calculus to obtain the following in a natural an
 #### Existence and uniqueness of solutions to \eqref{ode}, \eqref{ode2}, \eqref{ode4}
 
 <div class="theorem">
-Given $e_0, z \in \C$, there exists a unique differentiable function $e: \R \rightarrow \C$ satisfying
+Given $e_0, z \in \C$, there exists a unique differentiable function $E: \R \rightarrow \C$ satisfying
 \begin{equation}\label{ivp}
-  e' = ze\text{ and }e(0) = e_0.
+  E' = ze\text{ and }E(0) = e_0.
 \end{equation}
 </div>
 
 <div class="proof">
-<p> First, we show that a solution exists. Consider the power series
+<p> We use power series to prove that a solution to \eqref{ivp} exists. Uniqueness is proved above.
+</p>
+
+<p>Consider the power series
 $$
-e(t) = \sum_{k=0} c_kt^k.
+E(t) = \sum_{k=0} c_kt^k.
 $$
-If $e$ satisfies equation \eqref{ivp} implies that $c_0 = e_0$ and
+If $E$ satisfies the equation \eqref{ivp}, then that $c_0 = e_0$ and
 $$
-\sum_{k=0}^\infty (k+1)c_{k+1}t^k = \sum_{k=0}^\infty zkc_kt^k,
+\sum_{k=0}^\infty (k+1)c_{k+1}t^k = \sum_{k=0}^\infty zc_kt^k,
 $$
-which in turns implies that for any $k \ge 0$,
+which implies that for each $k \ge 0$,
 $$
-c_{k+1} = \frac{z}{k+1}c_k.
+c_{k+1} \frac{z}{k+1}c_k.
 $$
 By induction, we see that
 $$
-c_k = \frac{z^k}{k!},
+c_k = e_0\frac{z^k}{k!},
 $$
-Therefore, the power series for $e$ is
+Therefore, the power series for $E$ is
 $$
 e_0\sum_{k=0}^\infty \frac{(zt)^k}{k!}.
 $$
-It is easily checked that by the ratio test for series, the series converges for all $t \in \R$. This also implies that the power series for $e'$ also converges for all $t \in \R$ and the function $e$ satisfies \eqref{ivp}.
+It is easily checked that by the ratio test for series, the series converges absolutely for all $t \in \R$. We therefore define
+$$
+E(t) = e_0\sum_{k=0}\frac{(zt)^k}{k!}.
+$$
 </p>
 
 <p>
-Now suppose $e_1$ and $e_2$ are differentiable functions that are both solutions to \eqref{ivp}. Then the function $f = e_2-e_1$ satisfies
-\begin{equation}\label{ivpz}
-  f' = zf\text{ and }f(0) = 0.
-\end{equation}
-We want to show that this implies $f=0$ on $\R$.
-</p>
-
-<p>
-Let $T > 0$ and denote
-$$
-\|f\| = \max \{|f(t)|\ :\ t \in [t_0-T,t_0+T]\}.
-$$
-By the fundamental theorem of calculus,
+It remains to show that $E$ really does satisfy the \eqref{ivp}. First, we derive the power series for $E'$ as follows: 
 \begin{align*}
-f(t) &= f(t)-f(t_0)\\
-     &=  \int_{s=t_0}^{s=t}f'(s)\,ds\\
-     &=  z\int_{s=t_0}^{s=t}f(s)\,ds.
+E'(x) &= \lim_{y\rightarrow x} \frac{E(y)-E(x)}{y-x}\\
+&= \lim_{y\rightarrow x} \frac{1}{y-x}\left(e_0\sum_{k=0}^\infty \frac{(\kappa y)^k}{k!}
+- e_0\sum_{k=0}^\infty \frac{(\kappa x)^k}{k!}\right)\\
+&= e_0\lim_{y\rightarrow x} \sum_{k=0}^\infty \frac{1}{k!}\left(\frac{(\kappa y)^k-(\kappa x)^k}{y-x}\right)\\
+&= e_0\lim_{y\rightarrow x} \sum_{k=1}^\infty \frac{\kappa^k}{k!}(y^{k-1}+y^{k-2}x + \cdots + yx^{k-2} + x^{k-1})\\
+&= e_0\sum_{k=1}^\infty \frac{\kappa^k}{k!}kx^{k-1}\\
+&= \kappa e_0\sum_{k=0}^\infty \frac{(\kappa x)^k}{k!}\\
+&= \kappa E.
 \end{align*}
-and therefore
-\begin{align*}
-\|f\| &= |z|\max_{t\in[t_0-T,t_0+T]}\left|\int_{s=t_0}^{s=t}f(s)\,ds\right|\\
-&\le |z|T\|f\|
-\end{align*}
-It follows that if
+Since, by the ratio test, all of the series in the calculation above converge absolutely, it is a valid calculation and therefore
 $$
-|z| < \frac{1}{T},
+E' = \kappa E.
 $$
-then $\|f\|=0$. By applying this repeatedly with
-$$
-t_0 = k\frac{T}{2},\ k \in \Z,
-$$
-it follows that $f(t) = 0$ for all $t \in \R$.
 </p>
 </div>
 
 #### A solution to \eqref{ode2} goes around the whole circle
 
 <p>
-We sketch a proof. The key point is that suppose we have solutions $(x_1,y_1): (a_1, b_1) \rightarrow \R^2$ and $(x_2,y_2): (a_2,b_2) \rightarrow \R^2$
-to
-$$ (x',y') = (-y,x) $$
-such that for some $t_1 \in(a_1,b_1)$ and $t_2 \in (a_2,b_2)$,
-$$
-(x_1,y_1)(t_1) = (x_2,y_2)(t_2).
-$$
-By the uniqueness of a solution to \eqref{ode2}, it follows that
-$$
-(x_1,y_1)(t) = (x_2,y_2)(t_2-t_1+t)
-$$
-for all $t \in (a_1,b_1)\cap (a_2-t_2+t_1,b_2-t_2+t_1)$. Therefore, the two solutions join together to form a single solution on the interval
-$$
-(\min(a_1,a_2-t_2+t_1),\max(b_1,b_2-t_2+t_1)).
-$$
+Details coming.
 </p>
-
-<p>
-The idea now is to show that if the solution does not cover the whole circle, it can always be extended further. This implies that the solution does cover the whole circle.
-</p>
-
