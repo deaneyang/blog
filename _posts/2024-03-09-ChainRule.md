@@ -74,7 +74,7 @@ Since everything above is done without using coordinates, the same proof works f
 </p>
 
 <p>
- Let $M$ be an $m$-manifold, $N$ be an $n$-manifold, and $O$ be a $p$-manifold.Let
+ Let $M$ be an $m$-manifold, $N$ be an $n$-manifold, and $O$ be a $p$-manifold. Let
  $$F: M \rightarrow N\text{ and }G: N \rightarrow O $$
  be $C^1$ maps. We want to prove the chain rule for the composition:
 </p>
